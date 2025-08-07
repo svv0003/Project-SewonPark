@@ -1,0 +1,7 @@
+#withdrawConfirm-error {
+  display: none;
+  color: red;
+}
+#withdrawConfirm-error.error {
+  display: block;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>유니클로 - 회원탈퇴</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/withdraw.css" />
+    <link rel="icon" type="image/jpeg" href="../IMG/UNIQLO_logo.jpeg" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="nav-container">
+        <div class="nav-left">
+          <a href="index.html"><img src="../IMG/UNIQLO_logo.jpeg" alt="UNIQLO_logo" id="logo"/></a>
+        </div>
+      </div>
+    </div>
+
+    <h2>회원 탈퇴</h2>
+    <div class="withdraw-container">
+      <div class="withdrawInfo-box">
+        <h3>회원 탈퇴 절차</h3>
+        <p>유니클로 온라인스토어 회원 탈퇴시, 회원관련 모든 서비스를 이용하실 수 없습니다.  탈퇴 후 회원 정보를 복원할 수 없습니다.</p>
+        <p>회원 탈퇴하신 경우 고객센터 측에서 확인 및 대응이 어렵습니다. 양해 부탁드립니다.</p>
+        <a href="https://faq-kr.uniqlo.com" class="content-right">회원 탈퇴 관련 안내</a>
+      </div>
+      <div class="withdrawConfirm-box">
+        <h3>이용약관 확인</h3>
+        <p>회원 탈퇴를 희망하시는 고객님은 주의 사항 및 회원 탈퇴 관련 안내을 확인해 주세요. 위 사항에 동의하실 경우 동의란에 체크 후 「회원 탈퇴」 버튼을 눌러 주세요.</p>
+        <p id="withdrawConfirm-error"></p>
+        <label for="withdrawConfirm">
+          <input type="checkbox" class="withdrawConfirm-checkbox" id="withdrawConfirm">
+          동의합니다.
+        </label>
+        <a href="https://faq-kr.uniqlo.com/pkb_Home_UQ_KR?id=kA0Ie000000TO0f&l=ko&c=category_uq_kr%3AUQ_C7_4&fs=Search&pn=1" class="content-right">이용약관</a>
+        <a href="https://faq-kr.uniqlo.com/pkb_Home_UQ_KR?id=kA0Ie000000TO0Z&l=ko&c=category_uq_kr%3AUQ_C7_4&fs=Search&pn=1" class="content-right">개인정보처리방침</a>
+      </div>
+      <button type="button" class="withdraw-btn" id="withdrawBtn">회원 탈퇴</button>
+    </div>
+    
+    <script src="../js/scripts.js"></script>
+    <script src="../js/withdraw.js"></script>
+  </body>
+</html>

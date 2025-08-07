@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/userInfo.css" />
+    <link rel="icon" type="image/jpeg" href="../IMG/UNIQLO_logo.jpeg" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="nav-container">
+        <div class="nav-left">
+          <a href="index.html"><img src="../IMG/UNIQLO_logo.jpeg" alt="UNIQLO_logo" id="logo"/></a>
+        </div>
+      </div>
+    </div>
+
+    <h2>회원 정보</h2>
+    <div class="userInfo-container">
+      <div class="userId-box">
+        <h3>회원 이메일(아이디) 주소</h3>
+        <p class="userId" id="userInfo-email"></p>
+        <button class="userInfo-change" id="userId-change">이메일(아이디) 주소 변경</button>
+        <button class="userInfo-change" id="userPW-change">비밀번호 변경</button>
+        <!--
+        이메일(아이디) 주소 변경
+        비밀번호 변경
+        
+        버튼을 넣을 것인가...
+        userList에서 해당 아이디와 비밀번호의 value를 수정할 수 있나?
+        -->
+      </div>
+
+      <div class="userInfo-box">
+        <h3>회원 정보</h3>
+        <h4>이름</h4>
+        <p class="userInfo-content" id="userInfo-name"></p>
+        <h4>전화번호</h4>
+        <p class="userInfo-content" id="userInfo-phone"></p>
+        <h4>주소지</h4>
+        <p class="userInfo-content" id="userInfo-address"></p>
+        <button class="userInfo-change" id="userInfo-change">회원정보 변경</button>
+        <!--
+        회원정보 번경
+
+        버튼을...
+        -->
+      </div>
+      <button class="" id="move-myPage-btn">MY PAGE로 돌아가기</button>
+    </div>
+
+    
+    
+    <script src="../js/scripts.js"></script>
+    <script src="../js/userInfo.js"></script>
+  </body>
+</html>

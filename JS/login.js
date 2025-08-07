@@ -17,11 +17,11 @@ function loginBtn(e) {
       alert("로그인 되었습니다.")
       window.close();
     } else {
-      alert("아이디 또는 비밀번호가 일치하지 않습니다.")
+      // 에러 메세지 표시
       return;
     }
   } else {
-    alert("아이디 또는 비밀번호가 일치하지 않습니다.")
+    // 에러 메세지 표시
     return;
   }
 }
