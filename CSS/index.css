@@ -1,0 +1,35 @@
+.main-container {
+  max-width: 1000px;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+
+}
+
+.nav-container {
+    display: flex;
+    height: 64px;
+    position: relative;
+    justify-content: space-between;
+}
+
+.category-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#logo {
+  width: 34px;
+}
+
+.nav-right {
+  display: flex;
+  text-align: center;
+  justify-items: center;
+  padding: 10px;
+  height: 100%;
+}
+
+.nav-item {
+  margin-left: 10px;
+}
