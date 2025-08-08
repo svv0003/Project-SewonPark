@@ -1,5 +1,22 @@
+.main-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: left;
+}
+
 .myPage-container {
  display:block;
 }
 
-.
+.userTab {
+  border-top: 1px solid #333;
+  height: 40px;
+  padding: 10px 0;
+}
+
+a {
+  color: #333;
+  font-size: 0.9rem;
+  text-decoration: none;
+}

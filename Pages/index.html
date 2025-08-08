@@ -16,98 +16,72 @@
   <body>
     <div class="main-container">
       <div class="nav-container">
-        <div class="nav-left">
-          <a href="index.html"><img src="../IMG/UNIQLO_logo.jpeg" alt="UNIQLO_logo" id="logo"/></a>
+        <div class="nav-left" id="logoIMG">
+          <a href="index.html">
+            <img src="../IMG/UNIQLO_logo.jpeg" alt="UNIQLO_logo" id="logo"/>
+          </a>
+        </div>
+        <div class="search-input-container off">
+          <input type="text" class="search-input" id="search-input" placeholder="검색어를 입력하세요">
         </div>
         <div class="nav-right" id="buttons">
-          <div class="nav-item" id="search-btn">검색</div>
-          <div class="nav-item" id="userPage-btn">마이페이지</div>
-          <div class="nav-item" id="shopping-btn">장바구니</div>
-          <div class="nav-item" id="menu-btn">㆔</div>
+          <button class="nav-item" id="search-btn"><img src="../IMG/search.png" alt="search"></button>
+          <button class="nav-item" id="userPage-btn"><img src="../IMG/mypage.png" alt="mypage"></button>
+          <button class="nav-item" id="shopping-btn"><img src="../IMG/cart.png" alt="cart"></button>
+          <button class="nav-item" id="menu-btn"><img src="../IMG/menu.png" alt="menu"></button>
         </div>
       </div>
 
-      <div class="category-container">
+
+
+      <div class="category-container off">
+        <div class="genderAge active" id="men">MEN</div>
         <div class="genderAge" id="women">WOMEN</div>
-        <div class="genderAge" id="men">MEN</div>
         <div class="genderAge" id="kids">KIDS</div>
         <div class="genderAge" id="baby">BABY</div>
+
+        <div class="subcategory-container active" id="men-subcategories">
+          <a href="search.html" class="subcategory-item" data-gender="men" data-category="Top">Top</a>
+          <a href="search.html" class="subcategory-item" data-gender="men" data-category="Bottom">Bottom</a>
+          <a href="search.html" class="subcategory-item" data-gender="men" data-category="Outer">Outer</a>
+          <a href="search.html" class="subcategory-item" data-gender="men" data-category="ACC">ACC</a>
+        </div>
+        <div class="subcategory-container" id="women-subcategories">
+          <a href="search.html" class="subcategory-item" data-gender="women" data-category="Top">Top</a>
+          <a href="search.html" class="subcategory-item" data-gender="women" data-category="OnePiece">OnePiece</a>
+          <a href="search.html" class="subcategory-item" data-gender="women" data-category="Skirt">Skirt</a>
+          <a href="search.html" class="subcategory-item" data-gender="women" data-category="ACC">ACC</a>
+        </div>
+        <div class="subcategory-container" id="kids-subcategories">
+          <a href="search.html" class="subcategory-item" data-gender="kids" data-category="Top">Top</a>
+          <a href="search.html" class="subcategory-item" data-gender="kids" data-category="Bottom">Bottom</a>
+          <a href="search.html" class="subcategory-item" data-gender="kids" data-category="OnePiece/Skirt">OnePiece / Skirt</a>
+        </div>
+        <div class="subcategory-container" id="baby-subcategories">
+          <a href="search.html" class="subcategory-item" data-gender="baby" data-category="bodysuits">Bodysuits</a>
+          <a href="search.html" class="subcategory-item" data-gender="baby" data-category="sleepwear">Sleepwear</a>
+        </div>
       </div>
 
-      <div class="slide-container">
-        <p></p>
-      </div>
+
+
+
+
+
+
+
+
+
+
+
+      
       
     </div>
-    
-    <!--
+  
 
-uniqlo-clone/
-├── index.html                   # 메인 홈페이지  아래 스크롤 페이지네이션
-├── pages/                          
-│   ├── search.html              # 검색 결과 페이지
-│   ├── category.html            # 카테고리별 제품 목록
-│   ├── product-detail.html      # 제품 상세 페이지
-│   ├── login.html               # 로그인 팝업
-│   ├── register.html            # 회원가입 페이지
-│   ├── ishlist.html             # 위시리스트 페이지  X
-│   ├── mypage.html              # 마이페이지
-│   ├── store-locator.html       # 매장 안내
-│   ├── app-download.html        # 앱 다운로드      X
-│   └── service-info.html        # 서비스 안내
-├── css/
-│   ├── common.css               # 공통 스타일 (헤더, 푸터, 레이아웃)
-│   ├── index.css                # 메인 페이지
-│   ├── search.css               # 검색 페이지
-│   ├── category.css             # 카테고리 페이지
-│   ├── product.css              # 제품 상세 페이지
-│   ├── auth.css                 # 로그인/회원가입
-│   ├── mypage.css               # 마이페이지
-│   ├── modal.css                # 모달/팝업 공통
-│   └── responsive.css           # 반응형 디자인
-├── js/
-│   ├── common.js                # 공통 기능
-│   ├── index.js                 # 메인 페이지 (배너 슬라이드)
-│   ├── search.js                # 검색 기능
-│   ├── category.js              # 카테고리 및 필터링
-│   ├── product.js               # 제품 상세 (옵션 선택, 위시리스트)
-│   ├── auth.js                  # 로그인/회원가입
-│   ├── wishlist.js              # 위시리스트 관리
-│   ├── store-locator.js         # 매장 찾기 (지도 API)
-│   └── data.js                  # 제품 데이터 (JSON 형태)
-├── images/
-│   ├── banners/                 # 메인 배너 이미지
-│   │   ├── women/
-│   │   ├── men/
-│   │   ├── kids/
-│   │   └── baby/
-│   ├── products/                # 제품 이미지
-│   │   ├── women/
-│   │   │   ├── tops/
-│   │   │   ├── bottoms/
-│   │   │   └── dresses/
-│   │   ├── men/
-│   │   │   ├── tops/
-│   │   │   ├── bottoms/
-│   │   │   └── outerwear/
-│   │   ├── kids/
-│   │   └── baby/
-│   ├── icons/                   # UI 아이콘
-│   │   ├── search.svg
-│   │   ├── user.svg
-│   │   ├── heart.svg
-│   │   └── menu.svg
-│   └── logos/                   # 로고 이미지
-│       └── uniqlo-logo.png
-├── data/
-│   ├── products.json            # 제품 데이터
-│   ├── categories.json          # 카테고리 데이터
-│   └── stores.json              # 매장 정보
-└── assets/
-    └── fonts/                   # 웹폰트
+
     
-    -->
-    <script src="../js/index.js"></script>
     <script src="../js/scripts.js"></script>
+    <script src="../js/index.js"></script>
   </body>
 </html>
