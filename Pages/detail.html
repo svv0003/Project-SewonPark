@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/detail.css" />
+    <link rel="icon" type="image/jpeg" href="../IMG/UNIQLO_logo.jpeg" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="nav-container">
+        <div class="nav-left" id="logoIMG">
+          <a href="index.html">
+            <img src="../IMG/UNIQLO_logo.jpeg" alt="UNIQLO_logo" id="logo"/>
+          </a>
+        </div>
+        <div class="search-input-container off">
+          <input type="text" class="search-input" id="search-input" placeholder="검색어를 입력하세요">
+          <div class="search-error" id="search-error"></div>
+        </div>
+        <div class="nav-right" id="buttons">
+          <button class="nav-item" id="search-btn"><img src="../IMG/search.png" alt="search"></button>
+          <button class="nav-item" id="userPage-btn"><img src="../IMG/mypage.png" alt="mypage"></button>
+          <button class="nav-item" id="shopping-btn"><img src="../IMG/cart.png" alt="cart"></button>
+          <button class="nav-item" id="menu-btn"><img src="../IMG/menu.png" alt="menu"></button>
+        </div>
+      </div>
+
+      <div class="category-container off">
+        <div class="genderAge active" id="men">MEN</div>
+        <div class="genderAge" id="women">WOMEN</div>
+        <div class="genderAge" id="kids">KIDS</div>
+        <div class="genderAge" id="baby">BABY</div>
+
+        <div class="subcategory-container active" id="men-subcategories">
+          <a href="search.html" class="subcategory-item" data-gender="men" data-category="Top">Top</a>
+          <a href="search.html" class="subcategory-item" data-gender="men" data-category="Bottom">Bottom</a>
+          <a href="search.html" class="subcategory-item" data-gender="men" data-category="Outer">Outer</a>
+          <a href="search.html" class="subcategory-item" data-gender="men" data-category="ACC">ACC</a>
+        </div>
+        <div class="subcategory-container" id="women-subcategories">
+          <a href="search.html" class="subcategory-item" data-gender="women" data-category="Top">Top</a>
+          <a href="search.html" class="subcategory-item" data-gender="women" data-category="OnePiece">OnePiece</a>
+          <a href="search.html" class="subcategory-item" data-gender="women" data-category="Skirt">Skirt</a>
+          <a href="search.html" class="subcategory-item" data-gender="women" data-category="ACC">ACC</a>
+        </div>
+        <div class="subcategory-container" id="kids-subcategories">
+          <a href="search.html" class="subcategory-item" data-gender="kids" data-category="Top">Top</a>
+          <a href="search.html" class="subcategory-item" data-gender="kids" data-category="Bottom">Bottom</a>
+          <a href="search.html" class="subcategory-item" data-gender="kids" data-category="OnePiece/Skirt">Skirt</a>
+        </div>
+        <div class="subcategory-container" id="baby-subcategories">
+          <a href="search.html" class="subcategory-item" data-gender="baby" data-category="bodysuits">Bodysuits</a>
+          <a href="search.html" class="subcategory-item" data-gender="baby" data-category="sleepwear">Sleepwear</a>
+        </div>
+      </div>
+
+
+      <div class="container mx-auto p-4">
+        <h1 class="text-2xl font-bold mb-4">제품 상세 정보</h1>
+        <div id="product-detail" class="bg-white p-6 rounded-lg shadow-md">
+        </div>
+        <a href="search.html" class="mt-4 inline-block text-blue-500 hover:underline">목록으로 돌아가기</a>
+      </div>
+    </div>
+      
+
+
+
+
+
+
+    
+    <script src="../js/scripts1.js"></script>
+    <script src="../js/detail.js"></script>
+  </body>
+</html>

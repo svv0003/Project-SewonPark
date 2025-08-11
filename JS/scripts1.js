@@ -17,7 +17,7 @@ $(function () {
         return;
       }
       $(this).attr("placeholder", "검색어를 입력하세요").removeClass("error-placeholder");
-      window.location.href = `search.html?query=${category}`;
+      window.location.href = `search.html?query=${keyword}&page=1`;
     }
   });
 
@@ -51,7 +51,7 @@ $(function () {
   });
 
 
-  // 로그인 상태를 전역적으로 관리할 수 있도록 함수 노출
+  // 로그인 상태를 전역적으로 관리할 수 있도록 함수 생성
   window.updateLoginStatus = function (status) {
     localStorage.setItem('isLogin', status);
   };
