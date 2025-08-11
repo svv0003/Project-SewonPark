@@ -1,11 +1,8 @@
 $(function () {
   $("#register-btn").click(register);
 
-  // "모든 항목에 동의합니다" 체크박스 동기화
-  $("#required-checkboxAll").click(function() {
-    const isChecked = $(this).is(":checked");
-    $(".check-input").prop("checked", isChecked);
-  });
+  // 모든 동의 항목 체크
+  $("#required-checkboxAll").click(checkAll);
 
   // 비밀번호 실시간 검증
   $("#password-input").on("input", function() {
@@ -14,14 +11,13 @@ $(function () {
   });
 });
 
+
+
 function register(e) {
   e.preventDefault();
 
-  // 에러 메시지 초기화
+// 에러 메시지 초기화
   $(".error-message").text("").removeClass("error");
-
-  // 형식 검증
-  let isError = false;
 
   // 입력 값 변수에 담기
   const name = $("#name-input").val().trim();
@@ -29,22 +25,31 @@ function register(e) {
   const password = $("#password-input").val().trim();
   const phone = $("#phone-input").val().trim();
 
+  // 형식 검증
+  let isError = false;
+
   // 이름 검증
-  if (!/^[가-힣]+$/.test(name)) {
+  if (!/^[가-힣a-zA-Z\s]+$/.test(name)) {
     $("#name-error").text("이름은 한글 또는 영문만 입력해 주세요.").addClass("error");
     isError = true;
   }
 
-  // 이메일 검증 (기본 이메일 형식)
+  // 이메일 검증
   if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
     $("#email-error").text("유효한 이메일 주소를 입력해 주세요.").addClass("error");
     isError = true;
   }
-  
-  
-  // 전화번호 검증 (010-XXXX-XXXX 형식)
+
+  // 전화번호 검증
   if (!/^010-\d{4}-\d{4}$/.test(phone)) {
     $("#phone-error").text("전화번호는 010-XXXX-XXXX 형식이어야 합니다.").addClass("error");
+    isError = true;
+  }
+
+  // 비밀번호 검증
+  const passwordCheck = checkPasswordInput(password);
+  if (!passwordCheck.english || !passwordCheck.number || !passwordCheck.special || password.length < 8) {
+    $("#password-error").text("비밀번호는 8자 이상이어야 하며, 영문, 숫자, 특수문자(!@#$%^&*)를 포함해야 합니다.").addClass("error");
     isError = true;
   }
 
@@ -67,48 +72,40 @@ function register(e) {
     return;
   }
 
-  // 체크박스 검증
-  if (!isChecked) {
-    $("#checkbox-error").text("이용약관에 동의해 주세요.").addClass("error");
-    isError = true;
-    // 체크되지 않은 항목으로 스크롤
-    $("#required-checkbox").focus();
-    $("html, body").animate({ scrollTop: $("#required-checkbox").offset().top - 50 }, 500);
-    return;
-  }
-  
-  
-
-
-  // 이메일 중복 체크하기
+  // 이메일 중복 체크
+  let userList = JSON.parse(localStorage.getItem("userList") || "[]");
   const existing = userList.find((user) => user.email === email);
   if (existing) {
-    alert("이미 가입된 이메일입니다.");
+    $("#email-error").text("이미 가입된 이메일입니다.").addClass("error");
     isError = true;
     return;
   }
-
-  let userList = JSON.parse(localStorage.getItem("userList") || "[]");
-
-  // 중복이 없으면 사용자 추가
-  if (!isError){
-    // 새 객체에 변수 담기
+  
+  // 회원가입 성공
+  if (!isError) {
     const newUser = {
       name: name,
       email: email,
       password: password,
       phone: phone,
-      createAt: new Date().toDateString("ko-KR"),
+      address: address,
+      createAt: new Date().toLocaleDateString("ko-KR", { year: 'numeric', month: 'long', day: 'numeric' }),
     };
-    // 데이터에 새 객체 추가하기
+    // 기존 데이터에 추가
     userList.push(newUser);
-    // 로그인 페이지로 리디렉션 (선택 사항)
     localStorage.setItem("userList", JSON.stringify(userList));
     alert("회원가입이 완료되었습니다.");
     window.location.href = "index.html";
   }
 }
 
+
+
+// 모든 동의 항목 체크
+function checkAll() {
+  const isChecked = $(this).is(":checked");
+  $(".check-input").prop("checked", isChecked);
+};
 
 // 비밀번호 실시간 체크
 function checkPasswordInput(password) {
@@ -125,4 +122,4 @@ function checkPasswordInput(password) {
     number: isNumber,
     special: isSpecial
   };
-}
+};

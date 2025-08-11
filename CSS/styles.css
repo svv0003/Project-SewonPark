@@ -53,7 +53,6 @@
   font-weight: bold;
   background: none;
   border: none;
-  font-size: 14px;
 }
 
 
@@ -71,6 +70,21 @@
 
 .search-input-container.on {
   display: flex;
+  flex-direction: column;
+}
+
+.search-input {
+  padding: 5px;
+  font-size: 14px;
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+.search-input.error-placeholder::placeholder {
+  color: red;
+  font-size: 12px;
 }
 
 
@@ -105,112 +119,25 @@
   border-bottom: 2px solid red;
 }
 
-.subcategory-container.active {
-  display: block;
+.subcategory-container {
+  display: none;
   margin-top: 15px;
   padding-left: 10px;
 }
 
+.subcategory-container.active {
+  display: block;
+}
+
 .subcategory-item {
-  display: none;
+  display: block;
   padding: 5px 0;
   font-size: 14px;
   color: #333;
   text-decoration: none;
-}
-
-/* styles.css */
-
-/* 기존 코드 유지 */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.main-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* 네이게이션 */
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  height: 60px;
-  background-color: #fff;
-  border-bottom: 1px solid #e5e5e5;
-}
-
-/* ... 나머지 네비게이션 스타일은 그대로 유지 ... */
-
-/* 검색창 설정 */
-.search-input-container.off {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  display: none;
-}
-
-.search-input-container.on {
-  display: flex;
-}
-
-/* 카테고리 설정 */
-.category-container.off {
-  position: absolute;
-  top: 60px;
-  left: 0;
-  width: 100%;
-  background: #fff;
-  border: 1px solid #e5e5e5;
-  padding: 20px;
-  display: none;
-}
-
-.category-container.on {
-  display: block;
-}
-
-.genderAge {
-  display: inline-block;
-  font-size: 1rem;
-  font-weight: bold;
-  margin: 10px 15px;
-  padding: 10px 5px;
-  cursor: pointer;
-}
-
-.genderAge.active {
-  color: red;
-  border-bottom: 2px solid red;
-}
-
-/* 하위 카테고리 기본 상태 추가 */
-.subcategory-container {
-  display: none; /* 기본적으로 숨김 */
-  margin-top: 15px;
-  padding-left: 10px;
-}
-
-.subcategory-container.active {
-  display: block; /* active일 때만 표시 */
 }
 
 .subcategory-item:hover {
   color: #ff0000;
-}
-
-.subcategory-item {
-  display: block;
-  padding: 5px 0;
-  font-size: 14px;
-  color: #333;
-  text-decoration: none;
 }
 

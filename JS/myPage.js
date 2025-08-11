@@ -3,5 +3,7 @@ $(function(){
 })
 
 function logout(){
-  // 로그아웃 상태로 변경 -> 마이페이지 클릭, 장바구니, 위시리스트 사용하면 우선 로그인 팝업창 오픈
+  // 로그아웃 처리 시 로그인 상태 변경, 로그인 회원                                                                                                                                                                                                                                                                                                                                                                                                                                   `sadsf 객체 삭제, 메인페이지 이동
+    window.updateLoginStatus(false);
+    localStorage.removeItem("loggedInUserEmail");
 }

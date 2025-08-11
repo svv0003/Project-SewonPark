@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "티셔츠",
+    "brand": "UNIQLO",
+    "genderAge": "Men",
+    "category": "Top",
+    "lineup": "AIRism",
+    "price": 19900,
+    "image": "../IMG/",
+    "description": "",
+    "size": ["S", "M", "L", "XL"],
+    "color": ["Black", "White", "Navy"],
+    "registerDate": "2025-01-01"
+  }
+]

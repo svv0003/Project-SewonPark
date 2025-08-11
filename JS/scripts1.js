@@ -4,28 +4,27 @@ $(function () {
   // 마이페이지 버튼 클릭
   $("#userPage-btn").click(userPageBtn);
   // 장바구니 버튼 클릭
-  $("#shopping-btn").click();
+  $("#shopping-btn").click(shoppingBtn);
   // 메뉴 버튼 클릭
   $("#menu-btn").click(menuBtn);
-
-  // 검색 입력 시 search.html로 이동
-  $("#search-input").click(function () {
-    window.location.href = "search.html?keyword=" + encodeURIComponent($(this).val());
-  });
 
   // Enter 키 입력 시 search.html 이동
   $("#search-input").keypress(function (e) {
     if (e.which === 13) {
       const keyword = $(this).val().trim();
-      if (keyword) {
-        window.location.href = `search.html?query=${encodeURIComponent(keyword)}`;
+      if (!keyword) {
+        $(this).attr("placeholder", "검색어를 입력하세요").addClass("error-placeholder");
+        return;
       }
+      $(this).attr("placeholder", "검색어를 입력하세요").removeClass("error-placeholder");
+      window.location.href = `search.html?query=${encodeURIComponent(keyword)}`;
     }
   });
 
+
   // 상위 카테고리 클릭 시 하위 카테고리 표시
   $(".genderAge").click(function () {
-    const gender = $(this).attr("id"); // 예: "men", "women", "kids", "baby"
+    const gender = $(this).attr("id");
     
     // 모든 서브카테고리 숨기고, 해당 성별의 서브카테고리만 표시
     $(".subcategory-container").removeClass("active");
@@ -38,17 +37,26 @@ $(function () {
 
 
   // 상세 카테고리 클릭 시 search.html 이동
-  $(".subcategory-item").click(function () {
+  $(".subcategory-item").click(function (e) {
+    e.preventDefault();
     const gender = $(this).data("gender");
     const category = $(this).data("category");
-    window.location.href = `search.html?gender=${gender}&category=${encodeURIComponent(category)}`;
+    window.location.href = `search.html?genderAge=${gender}&category=${encodeURIComponent(category)}&page=1`;
   });
 
+  
   // 로고 클릭 시 홈으로 이동
   $("#logo").click(function () {
     window.location.href = "index.html";
   });
+
+
+  // 로그인 상태를 전역적으로 관리할 수 있도록 함수 노출
+  window.updateLoginStatus = function (status) {
+    localStorage.setItem('isLogin', status);
+  };
 });
+
 
 
 // 검색 버튼 기능
@@ -72,8 +80,8 @@ function userPageBtn() {
   const top = (window.screen.height - height) / 2;
   const options = `width=${width}, height=${height}, left=${left}, top=${top},`;
 
-  // 로그인 상태 변수 생성
-  const isLogin = false; // 예시
+  // 로그인 상태 변수
+  let isLogin = localStorage.getItem('isLogin') === 'true';
 
   if (isLogin) {
     // 마이페이지 이동하기
@@ -81,35 +89,20 @@ function userPageBtn() {
   } else {
     // 로그인 팝업창 생성하기 
     window.open("login.html", "_blank", options);
+    // 팝업 종료 후 상태 다시 확인 (선택 사항)
+    const checkLogin = setInterval(() => {
+      if (loginPopup.closed) {
+        isLogin = localStorage.getItem('isLogin') === 'true';
+        clearInterval(checkLogin);
+      }
+    }, 500);
   }
 }
 
-/*
-// 마이페이지 버튼 기능
-function userPageBtn() {
-  const width = 400;
-  const height = 600;
-  const left = (window.screen.width - width) / 2;
-  const top = (window.screen.height - height) / 2;
-  const options = `width=${width}, height=${height}, left=${left}, top=${top}`;
 
-  // 로그인 여부 확인 로직은 생략됨 (예: isLoggedIn 변수 사용 가능)
-  const isLoggedIn = false; // 예시
-
-  if (isLoggedIn) {
-    window.location.href = "myPage.html";
-  } else {
-    window.open("login.html", "_blank", options);
-  }
-}
-*/
-
-
-// 장바구니 버튼 기능
+// 장바구니 버튼 기능 (비활성화)
 function shoppingBtn() {
   window.location.href = "#";
-  // 장바구니 이동
-  // 비활성화
 }
 
 
@@ -119,11 +112,13 @@ function menuBtn() {
 
   if ($(".category-container").hasClass("on")) {
     // 초기 상태: 남성 카테고리 표시
+    $(".subcategory-container").removeClass("active");
+    $(".genderAge").removeClass("active");
     $("#men-subcategories").addClass("active");
     $("#men").addClass("active");
+
   } else {
     $(".subcategory-container").removeClass("active");
     $(".genderAge").removeClass("active");
   }
 }
-

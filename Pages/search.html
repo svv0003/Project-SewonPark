@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>유니클로</title>
+    <title>유니클로 - 검색 결과</title>
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="../css/styles.css" />
-    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/search.css" />
     <link rel="icon" type="image/jpeg" href="../IMG/UNIQLO_logo.jpeg" />
   </head>
   <body>
@@ -22,7 +22,8 @@
           </a>
         </div>
         <div class="search-input-container off">
-          <input type="text" class="search-input" id="search-input" placeholder="검색어를 입력하세요" required>
+          <input type="text" class="search-input" id="search-input" placeholder="검색어를 입력하세요">
+          <div class="search-error" id="search-error"></div>
         </div>
         <div class="nav-right" id="buttons">
           <button class="nav-item" id="search-btn"><img src="../IMG/search.png" alt="search"></button>
@@ -53,7 +54,7 @@
         <div class="subcategory-container" id="kids-subcategories">
           <a href="search.html" class="subcategory-item" data-gender="kids" data-category="Top">Top</a>
           <a href="search.html" class="subcategory-item" data-gender="kids" data-category="Bottom">Bottom</a>
-          <a href="search.html" class="subcategory-item" data-gender="kids" data-category="OnePiece/Skirt">OnePiece / Skirt</a>
+          <a href="search.html" class="subcategory-item" data-gender="kids" data-category="OnePiece/Skirt">Skirt</a>
         </div>
         <div class="subcategory-container" id="baby-subcategories">
           <a href="search.html" class="subcategory-item" data-gender="baby" data-category="bodysuits">Bodysuits</a>
@@ -61,25 +62,20 @@
         </div>
       </div>
 
+      <div class="search-results">
+        <h2>검색 결과</h2>
 
-
-
-
-
-
-
-
-
-
-
-      
-      
+        <div id="product-list"></div>
+        <div class="pagination">
+          <button id="prev-page" disabled>이전</button>
+          <span id="page-info"></span>
+          <button id="next-page">다음</button>
+        </div>
+      </div>
     </div>
-  
 
 
-    
     <script src="../js/scripts1.js"></script>
-    <script src="../js/index.js"></script>
+    <script src="../js/search.js"></script>
   </body>
 </html>
