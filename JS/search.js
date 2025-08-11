@@ -20,11 +20,13 @@ $(function () {
 
   // URL 파라미터 가져오기
   function renderPage() {
-    // 
+    // 현재 페이지의 URL의 쿼리 문자열을 가져오기
     const urlParams = new URLSearchParams(window.location.search);
     const query = urlParams.get("query");
     const genderAge = urlParams.get("genderAge");
     const category = urlParams.get("category");
     const page = parseInt(urlParams.get("page") || "1", 10);
 
-}});
+
+});
+

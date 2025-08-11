@@ -17,7 +17,7 @@ $(function () {
         return;
       }
       $(this).attr("placeholder", "검색어를 입력하세요").removeClass("error-placeholder");
-      window.location.href = `search.html?query=${encodeURIComponent(keyword)}`;
+      window.location.href = `search.html?query=${category}`;
     }
   });
 
@@ -41,7 +41,7 @@ $(function () {
     e.preventDefault();
     const gender = $(this).data("gender");
     const category = $(this).data("category");
-    window.location.href = `search.html?genderAge=${gender}&category=${encodeURIComponent(category)}&page=1`;
+    window.location.href = `search.html?genderAge=${gender}&category=${category}&page=1`;
   });
 
   
@@ -89,7 +89,7 @@ function userPageBtn() {
   } else {
     // 로그인 팝업창 생성하기 
     window.open("login.html", "_blank", options);
-    // 팝업 종료 후 상태 다시 확인 (선택 사항)
+    // 팝업 종료 후 상태 다시 확인
     const checkLogin = setInterval(() => {
       if (loginPopup.closed) {
         isLogin = localStorage.getItem('isLogin') === 'true';
@@ -111,12 +111,11 @@ function menuBtn() {
   $(".category-container").toggleClass("off on");
 
   if ($(".category-container").hasClass("on")) {
-    // 초기 상태: 남성 카테고리 표시
+    // 남성 카테고리 기본 표시 설정
     $(".subcategory-container").removeClass("active");
     $(".genderAge").removeClass("active");
     $("#men-subcategories").addClass("active");
     $("#men").addClass("active");
-
   } else {
     $(".subcategory-container").removeClass("active");
     $(".genderAge").removeClass("active");
