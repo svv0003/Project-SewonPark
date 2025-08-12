@@ -63,15 +63,49 @@
       </div>
 
 
-      <div class="container mx-auto p-4">
-        <h1 class="text-2xl font-bold mb-4">제품 상세 정보</h1>
-        <div id="product-detail" class="bg-white p-6 rounded-lg shadow-md">
-        </div>
-        <a href="search.html" class="mt-4 inline-block text-blue-500 hover:underline">목록으로 돌아가기</a>
-      </div>
-    </div>
+
       
 
+
+      <div class="product-container">
+
+        <div class="image-box" id="image-box">
+          <div id="product-image"></div>
+        </div>
+
+        <div class="detail-box" id="detail-box">
+          <span id="product-brand"></span> &gt;
+          <span id="product-genderAge"></span> &gt;
+          <span id="product-category"></span> &gt;
+          <span id="product-lineup"></span>
+          <div id="product-name"></div>
+          <div id="product-color"></div>
+          <p>컬러 : <span id="selectedColor"></span></p>
+          <div id="product-size"></div>
+          <p>사이즈 : <span id="selectedSize"></span></p>
+        </div>
+
+        <div class="cart-box" id="cart-box">
+          <span class="quantity-btn">
+            <button id="decrease-btn">-</button>
+            <input id="quantity" type="number" value="1" min="1" readonly>
+            <button id="increase-btn">+</button>
+          </span>
+          <button type="submit">장바구니에 담기</button>
+        </div>
+
+        <div class="wish-box" id="wish-box">
+          <button type="button" id="product-share">공유</button>
+          <button type="button" id="product-wishList"><span id="heart">🤍</span> 위시리스트에 추가</button>
+        </div>
+        
+        <div class="description-box" id="description-box">
+          <p>제품 상세 설명</p>
+          <p>제품 번호 : <span id="product-referenceNumber"></span></p>
+          <pre id="product-description"></pre>
+        </div>
+      </div>
+    </div>
 
 
 

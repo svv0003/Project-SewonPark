@@ -1,32 +1,103 @@
 [
   {
     "id": 1,
-    "referenceNumber": "123412341234",
-    "title": "티셔츠",
+    "referenceNumber": "474244",
+    "title": "AIRism코튼크루넥T(반팔)",
+    "brand": "UNIQLO",
+    "genderAge": "Men",
+    "category": "Top",
+    "lineup": "AIRism",
+    "price": 14900,
+    "image": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/465185/sub/goods_465185_sub2_3x4.jpg?width=400",
+    "description": "코튼 소재처럼 보이는 에어리즘 소재를 사용하였습니다. 드라이, 접촉냉감 기능이 포함되어 있어 땀을 흘려도 쾌적한 착용감을 느낄 수 있습니다.",
+    "size": ["XS", "S", "M", "L", "XL"],
+    "color": ["00 WHITE", "09 Black", "69 BLUE"]
+  },
+  {
+    "id": 2,
+    "referenceNumber": "475355",
+    "title": "AIRism코튼오버사이즈크루넥T(5부)",
     "brand": "UNIQLO",
     "genderAge": "Men",
     "category": "Top",
     "lineup": "AIRism",
     "price": 19900,
     "image": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/465185/sub/goods_465185_sub2_3x4.jpg?width=400",
-    "description": "",
-    "size": ["S", "M", "L", "XL"],
-    "color": ["Black", "White", "Navy"],
-    "registerDate": "2025-01-01"
+    "description": "보송보송하면서도 쾌적한 착용감을 느낄 수 있는 에어리즘 소재를 사용하였습니다. 드라이, 접촉냉감 기능이 포함되어 있습니다.",
+    "size": ["XS", "S", "M", "L", "XL"],
+    "color": ["00 WHITE", "09 Black", "12 PINK", "66 BLUE", "67 BLUE"]
   },
   {
-    "id": 1,
-    "referenceNumber": "43143214312",
-    "title": "청바지",
+    "id": 3,
+    "referenceNumber": "481055",
+    "title": "PEANUTS스웨트셔츠B",
     "brand": "UNIQLO",
     "genderAge": "Men",
-    "category": "Bottom",
-    "lineup": "Jeans",
+    "category": "Top",
+    "lineup": "Snoopy",
     "price": 39900,
-    "image": "https://image.uniqlo.com/UQ/ST3/kr/imagesgoods/470542/item/krgoods_08_470542_3x4.jpg?width=400",
+    "image": "https://image.uniqlo.com/UQ/ST3/kr/imagesgoods/481055/item/krgoods_01_481055_3x4.jpg?width=600",
+    "description": "전 세계적으로 변함없는 인기를 누리고 있는 만화 「피너츠(PEANUTS)」의 75주년 기념 컬렉션. 1950~80년대 빈티지 책 표지에서 영감을 얻은 디자인과 컬러가 특징입니다.",
+    "size": ["XS", "S", "M", "L", "XL"],
+    "color": ["01 OFF WHITE"]
+  },
+  {
+    "id": 4,
+    "referenceNumber": "480294",
+    "title": "브로드클로스오버사이즈셔츠(긴팔)",
+    "brand": "UNIQLO",
+    "genderAge": "Men",
+    "category": "Top",
+    "lineup": "Shirts",
+    "price": 49900,
+    "image": "https://image.uniqlo.com/UQ/ST3/kr/imagesgoods/471799/item/krgoods_61_471799_3x4.jpg?width=600",
+    "description": "적당히 탄탄하면서도 부드러운 감촉을 느낄 수 있는 초장면 100% 소재 사용.",
+    "size": ["XS", "S", "M", "L", "XL"],
+    "color": ["00 WHITE", "58 DARK GREEN", "61 BLUE"]
+  },
+  {
+    "id": 5,
+    "referenceNumber": "474506",
+    "title": "프리미엄리넨셔츠(긴팔)스트라이프A",
+    "brand": "UNIQLO",
+    "genderAge": "Men",
+    "category": "Top",
+    "lineup": "Shirts",
+    "price": 49900,
+    "image": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/474506/item/goods_01_474506_3x4.jpg?width=600",
+    "description": "리넨 100% 소재를 사용하여 리넨 소재만의 청량함과 부드러움, 고급스러운 광택감을 느낄 수 있습니다.",
+    "size": ["XS", "S", "M", "L", "XL"],
+    "color": ["01 OFF WHITE"]
+  },
+  {
+    "id": 6,
+    "referenceNumber": "474504",
+    "title": "프리미엄리넨셔츠(긴팔)",
+    "brand": "UNIQLO",
+    "genderAge": "Men",
+    "category": "Top",
+    "lineup": "Shirts",
+    "price": 49900,
+    "image": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/455957/item/goods_57_455957_3x4.jpg?width=600",
+    "description": "리넨 100% 소재를 사용하여 리넨 소재만의 청량함과 부드러움, 고급스러운 광택감을 느낄 수 있습니다.",
+    "size": ["XS", "S", "M", "L", "XL"],
+    "color": ["00 WHITE", "09 BLACK", "30 NATURAL", "32 BEIGE", "57 OLIVE", "61 BLUE", "65 BLUE", "69 NAVY"]
+  },
+  {
+    "id": 7,
+    "referenceNumber": "",
+    "title": "",
+    "brand": "UNIQLO",
+    "genderAge": "Men",
+    "category": "Top",
+    "lineup": "",
+    "price": 0,
+    "image": "",
     "description": "",
-    "size": ["S", "M", "L", "XL"],
-    "color": ["Black", "White", "Navy"],
-    "registerDate": "2025-01-01"
+    "size": ["XS", "S", "M", "L", "XL"],
+    "color": ["01 OFF WHITE"]
   }
+
 ]
+
+

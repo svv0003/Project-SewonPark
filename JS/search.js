@@ -12,10 +12,6 @@ $(function () {
       products = data;
       renderPage();
     },
-    error: function (xhr, status, error) {
-      $("#product-list").html("<p>상품 데이터를 불러오지 못했습니다.</p>");
-      renderPage();
-    },
   });
 
   // URL 파라미터 가져오기
@@ -41,13 +37,13 @@ $(function () {
       filteredProducts = products.filter((product) => {
         let match = true;
 
-        // 제품 객체의 속성과 URL 쿼리 파리미터 값 비교하기
+        // 제품 속성, URL 쿼리 파리미터 값 비교하기
         if (genderAge)
           match = match && product.genderAge.toLowerCase() === genderAge.toLowerCase();
         if (category)
           match = match && product.category.toLowerCase() === category.toLowerCase();
 
-        // 조건에 해당하는 제품 필터링
+        // 조건에 해당하는 제품 필터링하기
         return match;
       });
     }
@@ -83,7 +79,7 @@ $(function () {
       $("#page-info").text(`${page} / ${totalPages} 페이지`);
       // 첫 페이지에서 이전 버튼 비활성화하기
       $("#prev-page").prop("disabled", page === 1);
-      // 마지막 페이지에서 다음 페이비 비활성화라기
+      // 마지막 페이지에서 다음 페이비 비활성화하기
       $("#next-page").prop("disabled", page >= totalPages);
     }
 

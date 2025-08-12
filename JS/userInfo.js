@@ -2,21 +2,6 @@ $(function(){
   // 페이지 로드 시 회원 정보 표시하기
   userInfoShow();
 
-  /*
-  // 이메일 변경 버튼 클릭
-  $("#userId-change").click(function () {
-    openPopup("changeEmail.html", 400, 300);
-  });
-  // 비밀번호 변경 버튼 클릭
-  $("#userPW-change").click(function () {
-    openPopup("changePassword.html", 400, 400);
-  });
-  // 주소지 변경 버튼 클릭
-  $("#userAddress-change").click(function () {
-    openPopup("changeUserInfo.html", 400, 500);
-  });
-  */
-
   // 모달 열기
   $("#userId-change").click(() => openModal("email"));
   $("#userPW-change").click(() => openModal("password"));
@@ -25,6 +10,28 @@ $(function(){
   // 모달 닫기
   $(".close").click(closeModal);
   $("#modal-save").click(saveModal);
+
+  // 이메일 변경 중복확인(형식, 공백 확인)
+  $(document).on("click", "#modal-check-duplicate", () => {
+    const newEmailInput = $("#modal-email").val().trim();
+    const userList = JSON.parse(localStorage.getItem("userList") || "[]");
+    const isDuplicate = userList.some(user => user.email === newEmailInput);
+    const modal = $("#modal");
+
+    if (!newEmailInput) {
+      alert("이메일을 입력하세요.");
+      modal.data("emailValid", false);
+    } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(newEmailInput)) {
+      alert("유효한 이메일 주소를 입력하세요.");
+      modal.data("emailValid", false);
+    } else if (isDuplicate) {
+      alert("이미 사용중인 이메일입니다.");
+      modal.data("emailValid", false);
+    } else {
+      alert("사용 가능한 이메일입니다.");
+      modal.data("emailValid", true);
+    }
+  });
 
   // 마이페이지 이동하기
   $("#move-myPage-btn").click(()=>{
@@ -35,17 +42,13 @@ $(function(){
 
 // 회원 정보 표시
 function userInfoShow() {
-  // userList 데이터를 불러와서 현재 로그인된 회원 정보 표시하기
-  const userList = JSON.parse(localStorage.getItem("userList") || "[]");
-  const loggedInEmail = localStorage.getItem("loggedInUserEmail");
-  const currentUser = userList.find(user => user.email === loggedInEmail);
-  console.log(loggedInEmail);
-  console.log(currentUser);
+  // sessionStorage에 저장된 로그인 회원 정보를 변환 후 가져와서 해당 값들 화면에 표시하기
+  const loggedInUser = JSON.parse(sessionStorage.getItem("loggedInUser"));
 
-  $("#userInfo-email").html(currentUser.email || "등록된 정보가 없습니다.");
-  $("#userInfo-name").html(currentUser.name || "등록된 정보가 없습니다.");
-  $("#userInfo-phone").html(currentUser.phone || "등록된 정보가 없습니다.");
-  $("#userInfo-address").html(currentUser.address || "등록된 정보가 없습니다.");
+  $("#userInfo-email").html(loggedInUser.email || "등록된 정보가 없습니다.");
+  $("#userInfo-name").html(loggedInUser.name || "등록된 정보가 없습니다.");
+  $("#userInfo-phone").html(loggedInUser.phone || "등록된 정보가 없습니다.");
+  $("#userInfo-address").html(loggedInUser.address || "등록된 정보가 없습니다.");
 }
 
 
@@ -54,8 +57,13 @@ function openModal(type) {
   const modal = $("#modal");
   const modalTitle = $("#modal-title");
   const modalBody = $("#modal-body");
-
+  
+  emailValid = false;
   modal.show();
+  // 모달의 종류를 data에 저장하기
+  modal.data("type", type);
+  // 이메일 유효성 초기화하기
+  modal.data("emailValid", false);
 
   switch (type) {
   case "email":
@@ -94,78 +102,85 @@ function saveModal(e){
   e.preventDefault();
 
   const userList = JSON.parse(localStorage.getItem("userList") || "[]");
-  const loggedInEmail = localStorage.getItem("loggedInUserEmail");
-  const currentUser = userList.find(user => user.email === loggedInEmail);
-  const modalTitle = $("#modal-title").text();
+  const loggedInUser = JSON.parse(sessionStorage.getItem("loggedInUser"));
+  const currentUserInList = userList.find(user => user.email === loggedInUser.email);
+  const modal = $("#modal");
+  const modalType = modal.data("type");
   
   let isValid = true;
-  switch (modalTitle) {
+
+  switch (modalType) {
     case "email":
-      const newEmail = $("#modal-email").val().trim();
-      const newUserEmail = userList.some(user => user.email === newEmail);
-      // 새로 입력한 이메일 형식 검토
-      if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(newEmail)) {
-        alert("유효한 이메일 주소를 입력하세요.");
+      const newEmailInput = $("#modal-email").val().trim();
+      if (!modal.data("emailValid")) {
+        alert("이메일 중복 확인을 먼저 해주세요.");
         isValid = false;
-      // 새로 입력한 이메일 중복 검토
-      } else if(newUserEmail){
-        alert("이미 사용중인 이메일입니다.")
+        break;
+      } else if (!newEmailInput) {
+        alert("이메일을 입력하세요.");
         isValid = false;
+        break;
       }
-      // 유효한 이메일이라면 수정 내용 저장
       if (isValid) {
-        currentUser.email = newEmail;
-        localStorage.setItem("loggedInUserEmail", newEmail);
+        currentUserInList.email = newEmailInput;
+        loggedInUser.email = newEmailInput;
       }
       break;
-    case "비밀번호 변경":
+
+    case "password":
       const currentPw = $("#modal-current-pw").val();
       const newPw = $("#modal-new-pw").val();
       const confirmPw = $("#modal-confirm-pw").val();
-      // 기존 비밀번호 입력 확인
-      if (currentUser.password !== currentPw) {
+      // 입력 유무 확인
+      if (!currentPw || !newPw || !confirmPw) {
+        alert("모든 비밀번호 필드를 입력하세요.");
+        isValid = false;
+        break;
+      }
+      // 현재 비밀번호가 일치하지 않은 경우
+      if (currentUserInList.password !== currentPw) {
         alert("현재 비밀번호가 일치하지 않습니다.");
         isValid = false;
+        break;
       // 새로 입력한 비밀번호 형식 검토, 비밀번호 확인 입력 검토
-      } else if (newPw !== confirmPw || !/[a-zA-Z]/.test(newPw) || !/\d/.test(newPw) || !/[!@#$%^&*]/.test(newPw) || newPw.length < 8) {
+      } 
+      if (newPw !== confirmPw || !/[a-zA-Z]/.test(newPw) || !/\d/.test(newPw) || !/[!@#$%^&*]/.test(newPw) || newPw.length < 8) {
         alert("새 비밀번호는 8자 이상, 영문, 숫자, 특수문자를 포함해야 하며 확인이 일치해야 합니다.");
         isValid = false;
+        break;
       }
       // 유효한 비밀번호라면 수정 내용 저장
-      if (isValid) currentUser.password = newPw;
-      break;
-    case "주소지 변경":
-      const address = $("#modal-address").val().trim();
       if (isValid) {
-        currentUser.address = address;
+        currentUserInList.password = newPw; 
+        loggedInUser.password = newPw;
       }
       break;
+
+    case "address":
+      const address = $("#modal-address").val().trim();
+      if (!address) {
+        alert("주소를 입력하세요.");
+        isValid = false;
+        break;
+      }
+      if (isValid) {
+        currentUserInList.address = address;
+        loggedInUser.address = address;
+      }
+      break;
+    
+    default: isValid = false; break;
   }
-    if (isValid) {
-    localStorage.setItem("userList", JSON.stringify(userList));
-    alert("변경이 완료되었습니다.");
-    // 모달 닫기
-    closeModal();
-    // 새 정보를 페이지에 업데이트
-    userInfoShow();
-    }
+
+  if (isValid) {
+  localStorage.setItem("userList", JSON.stringify(userList));
+  sessionStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
+  alert("변경이 완료되었습니다.");
+
+  // 모달 닫기
+  closeModal();
+
+  // 새 정보를 페이지에 업데이트
+  userInfoShow();
+  }
 }
-
-
-/*
-// 팝업 열기 함수 (공통)
-// 아이디 변경 버튼 ->  아이디 수정 페이지 팝업창 -> 새 아이디 input, 중복확인 버튼 -> 완료 문구, 팝업창 닫기
-// 비밀번호 변경 버튼 -> 비밀번호 수정 페이지 팝업창 -> 현재 비밀번호, 새 비밀번호, 새 비밀번호 확인 input -> 완료 문구, 팝업창 닫기
-// 회원정보 변경 버튼 -> 회원 정보 수정 페이지 팝업창 -> 회원 정보 수정 완료 -> 회원 정보 페이지 내용 수정되도록
-function openPopup(url, width, height) {
-  const left = (window.screen.width - width) / 2;
-  const top = (window.screen.height - height) / 2;
-  const options = `width=${width}, height=${height}, left=${left}, top=${top}`;
-  const popup = window.open(url, "_blank", options);
-}
-*/
-
-
-
-
-

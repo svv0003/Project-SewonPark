@@ -27,23 +27,19 @@ function loginBtn(e) {
   // 기존 데이터 불러오기
   let userList = JSON.parse(localStorage.getItem("userList") || "[]");
 
+  const loggedInUser = userList.find(data => data.email === inputEmail && data.password === inputPW);
 
-  const loginUser = userList.find(data => data.email === inputEmail && data.password === inputPW);
-
-  if (loginUser) {
-    // 로그인 상태 값 저장
+  if (loggedInUser) {
     alert("로그인되었습니다.");
-    localStorage.setItem("loggedInUserEmail", inputEmail);
-    window.opener.updateLoginStatus(true);
-    window.close();
+    // 로그인 회원 정보 저장
+    sessionStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
+    window.location.href = "index.html";
   } else {
-    // 에러 메세지 표시
     alert("아이디 또는 비밀번호를 확인해 주세요.");
     return;
   }
 }
 
 function moveRegisterBtn(){
-  opener.window.location.href = "register.html";
-  window.close();
+  opener.location.href = "register.html";
 }

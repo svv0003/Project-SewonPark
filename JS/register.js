@@ -89,7 +89,7 @@ function register(e) {
       password: password,
       phone: phone,
       address: address,
-      createAt: new Date().toLocaleDateString("ko-KR", { year: 'numeric', month: 'long', day: 'numeric' }),
+      createAt: new Date().toLocaleDateString("ko-KR"),
     };
     // 기존 데이터에 추가
     userList.push(newUser);

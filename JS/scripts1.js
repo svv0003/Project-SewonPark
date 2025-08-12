@@ -49,12 +49,6 @@ $(function () {
   $("#logo").click(function () {
     window.location.href = "index.html";
   });
-
-
-  // 로그인 상태를 전역적으로 관리할 수 있도록 함수 생성
-  window.updateLoginStatus = function (status) {
-    localStorage.setItem('isLogin', status);
-  };
 });
 
 
@@ -74,28 +68,25 @@ function searchBtn() {
 // let 변수 = T/F -> 로그인:T / 로그아웃:F -> if문?
 // 로그인 속성 값 prop(a,T) / 로그아웃 속성 값 prop(a,F)?
 function userPageBtn() {
+  /*
   const width = 400;
   const height = 600;
   const left = (window.screen.width - width) / 2;
   const top = (window.screen.height - height) / 2;
   const options = `width=${width}, height=${height}, left=${left}, top=${top},`;
+  */
 
-  // 로그인 상태 변수
-  let isLogin = localStorage.getItem('isLogin') === 'true';
+  const loggedInUser = sessionStorage.getItem("loggedInUser");
 
-  if (isLogin) {
-    // 마이페이지 이동하기
-    window.location.href = "myPage.html";
-  } else {
+  // 로그인 정보가 없으면 로그인 팝업창 생성
+  if (!loggedInUser) {
     // 로그인 팝업창 생성하기 
-    window.open("login.html", "_blank", options);
-    // 팝업 종료 후 상태 다시 확인
-    const checkLogin = setInterval(() => {
-      if (loginPopup.closed) {
-        isLogin = localStorage.getItem('isLogin') === 'true';
-        clearInterval(checkLogin);
-      }
-    }, 500);
+    // window.open("login.html", "_blank", options);
+    window.location.href = "login.html";
+  }
+    // 로그인 정보가 있으면 마이페이지 이동
+    else {
+    window.location.href = "myPage.html";
   }
 }
 
