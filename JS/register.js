@@ -46,6 +46,12 @@ function register(e) {
     isError = true;
   }
 
+  // 주소 입력 확인
+  if (!address) {
+    $("#address-error").text("주소를 입력해 주세요.").addClass("error");
+    isError = true;
+  }
+
   // 비밀번호 검증
   const passwordCheck = checkPasswordInput(password);
   if (!passwordCheck.english || !passwordCheck.number || !passwordCheck.special || password.length < 8) {
@@ -108,6 +114,7 @@ function checkAll() {
   requiredCheckboxes.forEach(id => $(id).prop("checked", isChecked));
   if (!isChecked) $("#required-checkboxAll").prop("checked", false); // 전체 해제 시 전체 체크 해제
 }
+
 
 // 비밀번호 실시간 체크
 function checkPasswordInput(password) {
