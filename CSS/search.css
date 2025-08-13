@@ -1,3 +1,41 @@
+#product-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0px;
+}
+
+/* 상품 카드 스타일 */
+.product-item {
+  width: 300px;
+  background-color: #fff;
+  text-align: left;
+  cursor: pointer;
+  padding-bottom: 30px;
+}
+
 .product-item:hover {
-cursor: pointer;
+  cursor: pointer;
+}
+
+.product-item img {
+  width: 300px;
+  object-fit: cover;
+}
+
+.product-item p {
+  margin: 10px 0;
+}
+
+.product-item h3 {
+  margin: 10px 0;
+}
+
+
+
+
+
+@media (max-width: 640px) {
+  #product-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
