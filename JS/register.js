@@ -16,16 +16,16 @@ $(function () {
 function register(e) {
   e.preventDefault();
 
-// 에러 메시지 초기화
+  // 에러 메시지 초기화
   $(".error-message").text("").removeClass("error");
 
-  // 입력 값 변수에 담기
+  // 입력 데이터를 변수에 담기
   const name = $("#name-input").val().trim();
   const email = $("#email-input").val().trim();
   const password = $("#password-input").val().trim();
   const phone = $("#phone-input").val().trim();
 
-  // 형식 검증
+  // 형식 검증 변수 생성하기
   let isError = false;
 
   // 이름 검증
@@ -104,8 +104,10 @@ function register(e) {
 // 모든 동의 항목 체크
 function checkAll() {
   const isChecked = $(this).is(":checked");
-  $(".check-input").prop("checked", isChecked);
-};
+  const requiredCheckboxes = ["#required-checkbox-1", "#required-checkbox-2", "#required-checkbox-3"];
+  requiredCheckboxes.forEach(id => $(id).prop("checked", isChecked));
+  if (!isChecked) $("#required-checkboxAll").prop("checked", false); // 전체 해제 시 전체 체크 해제
+}
 
 // 비밀번호 실시간 체크
 function checkPasswordInput(password) {
