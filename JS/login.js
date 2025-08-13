@@ -42,5 +42,5 @@ function loginBtn(e) {
 }
 
 function moveRegisterBtn() {
-  opener.location.href = "register.html";
+  window.location.href = "register.html";
 }
