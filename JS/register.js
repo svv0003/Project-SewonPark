@@ -24,6 +24,7 @@ function register(e) {
   const email = $("#email-input").val().trim();
   const password = $("#password-input").val().trim();
   const phone = $("#phone-input").val().trim();
+  const address = $("#address-input").val().trim();
 
   // 형식 검증 변수 생성하기
   let isError = false;
