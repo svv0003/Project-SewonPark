@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
+    <title>유니클로 - 상세페이지</title>
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
@@ -17,13 +17,12 @@
     <div class="main-container">
       <div class="nav-container">
         <div class="nav-left" id="logoIMG">
-          <a href="index.html">
+          <a href="../index.html">
             <img src="../IMG/UNIQLO_logo.jpeg" alt="UNIQLO_logo" id="logo"/>
           </a>
         </div>
         <div class="search-input-container off">
           <input type="text" class="search-input" id="search-input" placeholder="검색어를 입력하세요">
-          <div class="search-error" id="search-error"></div>
         </div>
         <div class="nav-right" id="buttons">
           <button class="nav-item" id="search-btn"><img src="../IMG/search.png" alt="search"></button>
@@ -68,7 +67,6 @@
 
 
       <div class="product-container">
-
         <div class="image-box" id="image-box">
           <div id="product-image"></div>
         </div>
@@ -78,10 +76,10 @@
           <span id="product-genderAge"></span> &gt;
           <span id="product-category"></span> &gt;
           <span id="product-lineup"></span>
-          <div id="product-name"></div>
-          <div id="product-color"></div>
+          <div id="product-title"></div>
+          <div id="color-options"></div>
           <p>컬러 : <span id="selectedColor"></span></p>
-          <div id="product-size"></div>
+          <div id="size-options"></div>
           <p>사이즈 : <span id="selectedSize"></span></p>
         </div>
 
@@ -106,6 +104,8 @@
         </div>
       </div>
     </div>
+
+
 
 
 

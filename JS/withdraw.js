@@ -23,7 +23,7 @@ function withdraw(e) {
       sessionStorage.removeItem("loggedInUser");
     
       alert("회원 탈퇴가 완료되었습니다.");
-      window.location.href = "index.html";
+      window.location.href = "../index.html";
     } else {return;}
   } // 동의 항목을 체크하지 않은 경우
     else {

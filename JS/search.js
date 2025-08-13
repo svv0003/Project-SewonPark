@@ -29,7 +29,7 @@ $(function () {
     // 검색 결과를 출력하는 경우
     if (query) {
       filteredProducts = products.filter((product) =>
-        product.name.toLowerCase().includes(query.toLowerCase())
+        product.title.toLowerCase().includes(query.toLowerCase())
       );
     }
       // 카테고리 선택 결과를 출력하는 경우
@@ -55,15 +55,16 @@ $(function () {
       const firstIndex = (page - 1) * ITEMS_PER_PAGE;
       const lastIndex = firstIndex + ITEMS_PER_PAGE;
       const productsPerPages = filteredProducts.slice(firstIndex, lastIndex);
-
+      
       const product_list = $("#product-list");
       product_list.empty();
       if (productsPerPages.length > 0) {
         productsPerPages.forEach((product) => {
+          const initialColor = product.color[0];
           product_list.append(
             `
             <div class="product-item" onclick="goToDetail('${product.referenceNumber}')" >
-              <img src="${product.image}" alt="${product.title}">
+              <img src="${product.image[initialColor]}" alt="${product.title} - ${initialColor}">
               <p style="font-size:0.6rem">브랜드: ${product.brand}</p>
               <h3>${product.title}</h3>
               <p>가격: ${product.price.toLocaleString()}원</p>

@@ -1,0 +1,46 @@
+#color-options {
+  display: flex;
+  gap: 10px;
+}
+
+#color-options .color-option {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #999;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#color-options .color-option:hover {
+  border: 2px solid rgb(219, 18, 18);  
+}
+
+#color-options .color-option.selected {
+  border: 2px solid #000;
+}
+
+#size-options {
+  display: flex;
+  gap: 10px;
+}
+
+#size-options .size-option {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #999;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  text-align: center;
+  align-content: center;
+  cursor: pointer;
+}
+
+#size-options .size-option:hover {
+  border: 2px solid rgb(219, 18, 18);  
+}
+
+#size-options .size-option.selected {
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
+}

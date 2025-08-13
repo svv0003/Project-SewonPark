@@ -14,35 +14,36 @@
     <link rel="icon" type="image/jpeg" href="../IMG/UNIQLO_logo.jpeg" />
   </head>
   <body>
-    <div class="login-container">
-      <h2>로그인</h2>
-      <p class="login-error" id="login-error">아이디 또는 비밀번호가 일치하지 않습니다. 스펠링을 확인하고 다시 시도해 주세요.</p>
-      <div class="login-input-box">
-        <label class="login-input-box">
-          이메일 주소(아이디)
-          <input type="mail" class="login-input" id="email-input" placeholder="이메일(example@uniqlo.com)" required>
-        </label>
-        <label class="login-input-box">
-          비밀번호
-          <input type="password" class="login-input" id="pw-input" placeholder="비밀번호를 입력해 주세요." required>
-        </label>
+    <div class="main-container">
+      <div class="nav-container">
+        <div class="nav-left" id="logoIMG"><a href="../index.html">
+          <img src="../IMG/UNIQLO_logo.jpeg" alt="UNIQLO_logo" id="logo"/></a>
+        </div>
       </div>
-      <button type="submit" class="login-btn" id="login-btn">로그인</button>
-      <a href="#">비밀번호를 잊어버리셨나요?</a>
-    </div>
 
-    <div class="move-register-container">
-      <p>신규 회원가입</p>
-      <button type="button" class="move-register-btn" id="move-register-btn">신규 회원가입</button>
-      <p>온라인 스토어 이용을 위해 회원가입이 필요합니다.
-      회원가입 후 유니클로만의 특별한 혜택을 누려보세요.</p>
-    </div>
+      <div class="login-container">
+        <h2>로그인</h2>
+        <p class="login-error" id="login-error">아이디 또는 비밀번호가 일치하지 않습니다. 스펠링을 확인하고 다시 시도해 주세요.</p>
+        <div class="login-input-box">
+          <label class="login-input-box">
+            이메일 주소(아이디)
+            <input type="mail" class="login-input" id="email-input" placeholder="이메일(example@uniqlo.com)" required>
+          </label>
+          <label class="login-input-box">
+            비밀번호
+            <input type="password" class="login-input" id="pw-input" placeholder="비밀번호를 입력해 주세요." required>
+          </label>
+        </div>
+        <button type="submit" class="login-btn" id="login-btn">로그인</button>
+        <a href="#">비밀번호를 잊어버리셨나요?</a>
+      </div>
 
-
-
-
-
-
+      <div class="move-register-container">
+        <p>신규 회원가입</p>
+        <button type="button" class="move-register-btn" id="move-register-btn">신규 회원가입</button>
+        <p>온라인 스토어 이용을 위해 회원가입이 필요합니다.
+        회원가입 후 유니클로만의 특별한 혜택을 누려보세요.</p>
+      </div>
     </div>
 
     <script src="../js/scripts2.js"></script>

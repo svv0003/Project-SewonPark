@@ -95,7 +95,7 @@ function register(e) {
     userList.push(newUser);
     localStorage.setItem("userList", JSON.stringify(userList));
     alert("회원가입이 완료되었습니다.");
-    window.location.href = "index.html";
+    window.location.href = "../index.html";
   }
 }
 

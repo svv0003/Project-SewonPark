@@ -19,7 +19,8 @@ $(function () {
     const product = products.find((p) => p.referenceNumber === referenceNumber);
 
     if (product) {
-      $("#product-image").html(`<img src="${product.image}" alt="${product.title}">`);
+      const initialColor = product.color[0];
+      $("#product-image").html(`<img src="${product.image[initialColor]}" alt="${product.title} ${initialColor}">`);
       $("#product-title").text(product.title);
       $("#product-brand").html(`${product.brand}`);
       $("#product-price").html(`${product.price.toLocaleString()}원`);
@@ -30,6 +31,73 @@ $(function () {
       $("#product-description").html(`${product.description || "설명 없음"}`);
       $("#product-registerDate").html(`${product.registerDate}`);
 
+      const colorOption = {
+        "00 WHITE": "#FFFFFF",
+        "01 OFF WHITE": "#F5F5F5",
+        "03 GRAY": "#bfbfbfff",
+        "04 GRAY": "#8d8d8dff",
+        "07 GRAY": "#707070ff",
+        "08 DARK GRAY": "#474747ff",
+        "09 BLACK": "#000000",
+        "12 PINK": "#ff84e2ff",
+        "19 WINE": "#913842ff",
+        "30 NATURAL": "#ffffd8ff",
+        "32 BEIGE": "#f1f1caff",
+        "31 BEIGE": "#e9e9b5ff",
+        "34 BROWN": "#c09367ff",
+        "35 BROWN": "#ae7d4dff",
+        "36 BROWN": "#a26e3aff",
+        "39 DARK BROWN": "#654321",
+        "56 OLIVE": "#a2a202ff",
+        "57 OLIVE": "#808002ff",
+        "58 DARK GREEN": "#025602ff",
+        "61 BLUE": "#89a1ddff",
+        "63 BLUE": "#7c99e1ff",
+        "64 BLUE": "#5e85e7ff",
+        "65 BLUE": "#3a65d3ff",
+        "66 BLUE": "#3255adff",
+        "67 BLUE": "#224fc0ff",
+        "68 BLUE": "#113daaff",
+        "69 NAVY": "#00237aff",
+        "72 PURPLE": "#a019f4ff",
+        "79 DARK PURPLE": "#4b0082ff"
+      };
+
+      // 색상 버튼 생성
+      const colorButtons = product.color.map(color => {
+        const defaultColor = colorOption[color] || "#CCCCCC";
+        // 해당 제품 색상을 가져와서 화면에 표현하기
+        return `<div class="color-option" style="background-color: ${defaultColor};" data-color="${color}"></div>`;
+      }).join('');
+      $("#color-options").html(colorButtons);
+
+
+      // 색상 버튼 클릭 시 해당 색상의 이미지로 변경하기
+      $("#color-options .color-option").click(function () {
+        $("#color-options .color-option").removeClass("selected");
+        $(this).addClass("selected");
+        const selectedColor = $(this).data("color");
+        $("#selectedColor").text(selectedColor);
+        $("#product-image img").attr("src", product.image[selectedColor]).attr("alt", `${product.title} - ${selectedColor}`);
+      });
+
+
+      // 사이즈 버튼 생성
+      const sizeButtons = product.size.map(size => {
+        return `<div class="size-option" data-size="${size}">${size}</div>`;
+      }).join('');
+      $("#size-options").html(sizeButtons);
+
+      
+      // 사이즈 버튼 클릭
+      $("#size-options .size-option").click(function () {
+        $("#size-options .size-option").removeClass("selected");
+        $(this).addClass("selected");
+        const selectedSize = $(this).data("size");
+        $("#selectedSize").text(selectedSize);
+      });
+
+
       // 수량 조절
       $("#decrease-btn").click(() => {
         let quantity = parseInt($("#quantity").val());
@@ -37,11 +105,11 @@ $(function () {
           $("#quantity").val(quantity - 1);
         }
       });
-
       $("#increase-btn").click(() => {
         let quantity = parseInt($("#quantity").val());
         $("#quantity").val(quantity + 1);
       });
+
 
       // 위시리스트 추가
       $("#product-wishList").click(()=>{
@@ -52,17 +120,8 @@ $(function () {
           $("#heart").text("🤍");
         }
       })
-
     } else {
       $("#product-detail").html("해당 제품을 찾을 수 없습니다.");
     }
   }
 });
-
-
-/*
-
-색상 key의 value 개수만큼 각 value 색상을 바탕색으로 설정한 "색상 체크박스" 형태로 만들기
-사이즈 key의 value 개수만큼 각 value 문자열을 삽입한 "사이즈 체크박스" 형태로 만들기
-클릭한 색상, 사이즈 값을 주문 정보에 추가하기
-*/

@@ -1,4 +1,4 @@
-$(function(){
+$(function () {
   // 페이지 로드 시 회원 정보 표시하기
   userInfoShow();
 
@@ -15,7 +15,7 @@ $(function(){
   $(document).on("click", "#modal-check-duplicate", () => {
     const newEmailInput = $("#modal-email").val().trim();
     const userList = JSON.parse(localStorage.getItem("userList") || "[]");
-    const isDuplicate = userList.some(user => user.email === newEmailInput);
+    const isDuplicate = userList.some((user) => user.email === newEmailInput);
     const modal = $("#modal");
 
     if (!newEmailInput) {
@@ -34,11 +34,10 @@ $(function(){
   });
 
   // 마이페이지 이동하기
-  $("#move-myPage-btn").click(()=>{
+  $("#move-myPage-btn").click(() => {
     window.location.href = "myPage.html";
   });
-})
-
+});
 
 // 회원 정보 표시
 function userInfoShow() {
@@ -48,16 +47,17 @@ function userInfoShow() {
   $("#userInfo-email").html(loggedInUser.email || "등록된 정보가 없습니다.");
   $("#userInfo-name").html(loggedInUser.name || "등록된 정보가 없습니다.");
   $("#userInfo-phone").html(loggedInUser.phone || "등록된 정보가 없습니다.");
-  $("#userInfo-address").html(loggedInUser.address || "등록된 정보가 없습니다.");
+  $("#userInfo-address").html(
+    loggedInUser.address || "등록된 정보가 없습니다."
+  );
 }
-
 
 // 모달 열기
 function openModal(type) {
   const modal = $("#modal");
   const modalTitle = $("#modal-title");
   const modalBody = $("#modal-body");
-  
+
   emailValid = false;
   modal.show();
   // 모달의 종류를 data에 저장하기
@@ -66,47 +66,47 @@ function openModal(type) {
   modal.data("emailValid", false);
 
   switch (type) {
-  case "email":
-    modalTitle.text("이메일 변경");
-    modalBody.html(`
+    case "email":
+      modalTitle.text("이메일 변경");
+      modalBody.html(`
       <input type="email" id="modal-email" placeholder="새 이메일">
       <button id="modal-check-duplicate">중복 확인</button>
     `);
-    break;
-  case "password":
-    modalTitle.text("비밀번호 변경");
-    modalBody.html(`
+      break;
+    case "password":
+      modalTitle.text("비밀번호 변경");
+      modalBody.html(`
       <input type="password" id="modal-current-pw" placeholder="현재 비밀번호">
       <input type="password" id="modal-new-pw" placeholder="새 비밀번호">
       <input type="password" id="modal-confirm-pw" placeholder="새 비밀번호 확인">
     `);
-    break;
-  case "address":
-    modalTitle.text("주소지 변경");
-    modalBody.html(`
+      break;
+    case "address":
+      modalTitle.text("주소지 변경");
+      modalBody.html(`
       <input type="text" id="modal-address" placeholder="주소지">
     `);
-    break;
+      break;
   }
 }
 
-
 // 모달 닫기
-function closeModal(){
+function closeModal() {
   $("#modal").hide();
 }
 
-
 // 모달 저장하기
-function saveModal(e){
+function saveModal(e) {
   e.preventDefault();
 
   const userList = JSON.parse(localStorage.getItem("userList") || "[]");
   const loggedInUser = JSON.parse(sessionStorage.getItem("loggedInUser"));
-  const currentUserInList = userList.find(user => user.email === loggedInUser.email);
+  const currentUserInList = userList.find(
+    (user) => user.email === loggedInUser.email
+  );
   const modal = $("#modal");
   const modalType = modal.data("type");
-  
+
   let isValid = true;
 
   switch (modalType) {
@@ -142,16 +142,24 @@ function saveModal(e){
         alert("현재 비밀번호가 일치하지 않습니다.");
         isValid = false;
         break;
-      // 새로 입력한 비밀번호 형식 검토, 비밀번호 확인 입력 검토
-      } 
-      if (newPw !== confirmPw || !/[a-zA-Z]/.test(newPw) || !/\d/.test(newPw) || !/[!@#$%^&*]/.test(newPw) || newPw.length < 8) {
-        alert("새 비밀번호는 8자 이상, 영문, 숫자, 특수문자를 포함해야 하며 확인이 일치해야 합니다.");
+        // 새로 입력한 비밀번호 형식 검토, 비밀번호 확인 입력 검토
+      }
+      if (
+        newPw !== confirmPw ||
+        !/[a-zA-Z]/.test(newPw) ||
+        !/\d/.test(newPw) ||
+        !/[!@#$%^&*]/.test(newPw) ||
+        newPw.length < 8
+      ) {
+        alert(
+          "새 비밀번호는 8자 이상, 영문, 숫자, 특수문자를 포함해야 하며 확인이 일치해야 합니다."
+        );
         isValid = false;
         break;
       }
       // 유효한 비밀번호라면 수정 내용 저장
       if (isValid) {
-        currentUserInList.password = newPw; 
+        currentUserInList.password = newPw;
         loggedInUser.password = newPw;
       }
       break;
@@ -168,19 +176,21 @@ function saveModal(e){
         loggedInUser.address = address;
       }
       break;
-    
-    default: isValid = false; break;
+
+    default:
+      isValid = false;
+      break;
   }
 
   if (isValid) {
-  localStorage.setItem("userList", JSON.stringify(userList));
-  sessionStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
-  alert("변경이 완료되었습니다.");
+    localStorage.setItem("userList", JSON.stringify(userList));
+    sessionStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
+    alert("변경이 완료되었습니다.");
 
-  // 모달 닫기
-  closeModal();
+    // 모달 닫기
+    closeModal();
 
-  // 새 정보를 페이지에 업데이트
-  userInfoShow();
+    // 새 정보를 페이지에 업데이트
+    userInfoShow();
   }
 }
