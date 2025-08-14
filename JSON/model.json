@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "referenceNumber": "474244",
+    "image": "../IMG/AIRism반팔.png",
+    "alt": "productIMG1"
+  },
+  {
+    "id": 2,
+    "referenceNumber": "475564",
+    "image": "../IMG/와이드핏치노팬츠.png",
+    "alt": "productIMG2"
+  },
+  {
+    "id": 3,
+    "referenceNumber": "478230",
+    "image": "../IMG/집업쇼트블루종.png",
+    "alt": "productIMG3"
+  },
+  {
+    "id": 4,
+    "referenceNumber": "479577",
+    "image": "../IMG/멀티포켓숄더백.png",
+    "alt": "productIMG4"
+  }
+]

@@ -100,11 +100,12 @@ function shoppingBtn() {
 // 메뉴 버튼 기능
 function menuBtn() {
   $(".category-container").toggleClass("off on");
+  $(".overlay").toggleClass("off on");
 
   if ($(".category-container").hasClass("on")) {
-    // 남성 카테고리 기본 표시 설정
     $(".subcategory-container").removeClass("active");
     $(".genderAge").removeClass("active");
+    // 남성 카테고리 기본 표시 설정
     $("#men-subcategories").addClass("active");
     $("#men").addClass("active");
   } else {

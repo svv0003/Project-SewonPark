@@ -21,10 +21,10 @@
             <img src="IMG/UNIQLO_logo.jpeg" alt="UNIQLO_logo" id="logo"/>
           </a>
         </div>
-        <div class="search-input-container off">
-          <input type="text" class="search-input" id="search-input" placeholder="검색어를 입력하세요" required>
-        </div>
         <div class="nav-right" id="buttons">
+          <span class="search-input-container off">
+            <input type="text" class="search-input" id="search-input" placeholder="검색어를 입력하세요" required>
+          </span>
           <button class="nav-item" id="search-btn"><img src="IMG/search.png" alt="search"></button>
           <button class="nav-item" id="userPage-btn"><img src="IMG/mypage.png" alt="mypage"></button>
           <button class="nav-item" id="shopping-btn"><img src="IMG/cart.png" alt="cart"></button>
@@ -60,11 +60,22 @@
           <a href="Pages/search.html" class="subcategory-item" data-gender="baby" data-category="sleepwear">Sleepwear</a>
         </div>
       </div>
+
+      <div class="body-container">
+        <div class="slider-container">
+          <div class="slider"></div>
+          <div class="indicators"></div>
+        </div>
+
+        <div class="content">
+          <p>스크롤을 내려보세요!</p>
+          <!-- 추가 콘텐츠는 여기에 -->
+        </div>
+      </div>
     </div>
-  
+    <div class="overlay off"></div>
 
 
-    
     <script src="JS/index.js"></script>
   </body>
 </html>

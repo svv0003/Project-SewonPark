@@ -2,24 +2,30 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 .main-container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-
 }
 
-/* 네이게이션 */
+/* 네비게이션 */
 
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px;
   height: 60px;
   background-color: #fff;
+  position: fixed; /* 상단 고정 */
+  top: 0; /* 화면 상단에 붙임 */
+  width: 100%; /* 전체 너비 */
+  max-width: 1200px; /* main-container와 동일한 최대 너비 */
+  z-index: 1000; /* 다른 요소 위에 표시 */
+  border-bottom: 1px solid #cfcfcf;
 }
 
 .nav-left a {
@@ -54,21 +60,28 @@
   border: none;
 }
 
-
-
 /* 검색창 설정 */
 
-.search-input-container.off {
-  width: 100%;
+.search-input-container {
+  width: 250px;
+  height: 34px;
   padding: 10px;
   margin-bottom: 20px;
   font-size: 14px;
-  border: 1px solid #ccc;
+  align-content: center;
+  text-align: center;
+}
+
+.search-input-container.off {
   display: none;
 }
 
 .search-input-container.on {
   display: flex;
+  width: 250px;
+  height: 34px;
+  align-content: center;
+  text-align: center;
   flex-direction: column;
 }
 
@@ -86,21 +99,25 @@
   font-size: 12px;
 }
 
-
 /* 카테고리 설정 */
-
-.category-container.off{
-  position: absolute;
+.category-container {
   top: 60px;
   left: 0;
   width: 100%;
   background: #fff;
   border: 1px solid #e5e5e5;
   padding: 20px;
+  text-align: center;
+  position: fixed;
+  z-index: 999;
+}
+
+.category-container.off {
   display: none;
 }
 
 .category-container.on {
+  text-align: center;
   display: block;
 }
 
@@ -121,7 +138,9 @@
 .subcategory-container {
   display: none;
   margin-top: 15px;
-  padding-left: 10px;
+  text-align: center;
+  align-content: center;
+  height: 150px;
 }
 
 .subcategory-container.active {
@@ -130,7 +149,7 @@
 
 .subcategory-item {
   display: block;
-  padding: 5px 0;
+  padding: 7px 0;
   font-size: 14px;
   color: #333;
   text-decoration: none;
@@ -140,3 +159,13 @@
   color: #ff0000;
 }
 
+
+.body-container {
+  padding: 10px;
+  padding-top: 70px;
+}
+
+.page-name {
+  font-size: 2rem;
+  padding: 20px 0;
+}

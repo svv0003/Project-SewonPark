@@ -21,10 +21,10 @@
             <img src="../IMG/UNIQLO_logo.jpeg" alt="UNIQLO_logo" id="logo"/>
           </a>
         </div>
-        <div class="search-input-container off">
-          <input type="text" class="search-input" id="search-input" placeholder="검색어를 입력하세요">
-        </div>
         <div class="nav-right" id="buttons">
+          <span class="search-input-container off">
+            <input type="text" class="search-input" id="search-input" placeholder="검색어를 입력하세요" required>
+          </span>
           <button class="nav-item" id="search-btn"><img src="../IMG/search.png" alt="search"></button>
           <button class="nav-item" id="userPage-btn"><img src="../IMG/mypage.png" alt="mypage"></button>
           <button class="nav-item" id="shopping-btn"><img src="../IMG/cart.png" alt="cart"></button>
@@ -46,7 +46,7 @@
         </div>
         <div class="subcategory-container" id="women-subcategories">
           <a href="search.html" class="subcategory-item" data-gender="women" data-category="Top">Top</a>
-          <a href="search.html" class="subcategory-item" data-gender="women" data-category="OnePiece">OnePiece</a>
+          <a href="search.html" class="subcategory-item" data-gender="women" data-category="OnePiece">One Piece</a>
           <a href="search.html" class="subcategory-item" data-gender="women" data-category="Skirt">Skirt</a>
           <a href="search.html" class="subcategory-item" data-gender="women" data-category="ACC">ACC</a>
         </div>
@@ -61,9 +61,13 @@
         </div>
       </div>
 
-      <div class="search-results">
-        <h2>검색 결과</h2>
 
+      <div class="search-title">
+        <h2 id="search-title"></h2>
+      </div>
+
+      
+      <div class="search-results">
         <div id="product-list"></div>
         <div class="pagination">
           <button id="prev-page" disabled>이전</button>

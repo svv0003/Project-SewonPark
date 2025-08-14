@@ -21,10 +21,10 @@
             <img src="../IMG/UNIQLO_logo.jpeg" alt="UNIQLO_logo" id="logo"/>
           </a>
         </div>
-        <div class="search-input-container off">
-          <input type="text" class="search-input" id="search-input" placeholder="검색어를 입력하세요">
-        </div>
         <div class="nav-right" id="buttons">
+          <span class="search-input-container off">
+            <input type="text" class="search-input" id="search-input" placeholder="검색어를 입력하세요" required>
+          </span>
           <button class="nav-item" id="search-btn"><img src="../IMG/search.png" alt="search"></button>
           <button class="nav-item" id="userPage-btn"><img src="../IMG/mypage.png" alt="mypage"></button>
           <button class="nav-item" id="shopping-btn"><img src="../IMG/cart.png" alt="cart"></button>
@@ -65,45 +65,48 @@
 
       
 
+      <div class="body-container">
+        <div class="product-container">
 
-      <div class="product-container">
-        <div class="image-box" id="image-box">
-          <div id="product-image"></div>
-        </div>
-        <div class="option-box" id="option-box">
-          <div class="detail-box" id="detail-box">
-            <p>
-              <span id="product-brand"></span> &gt;
-              <span id="product-genderAge"></span> &gt;
-              <span id="product-category"></span> &gt;
-              <span id="product-lineup"></span>
-            </p>
-            <div id="product-title"></div>
-            <div id="product-price"></div>
-            <div id="color-options"></div>
-            <p>색상 : <span id="selectedColor"></span></p>
-            <div id="size-options"></div>
-            <p>사이즈 : <span id="selectedSize"></span></p>
+          <div class="image-box">
+            <div id="product-image"></div>
           </div>
 
-          <div class="cart-box" id="cart-box">
-            <span class="quantity-btn">
-              <button id="decrease-btn">-</button>
-              <input id="quantity" type="number" value="1" min="1" readonly>
-              <button id="increase-btn">+</button>
-            </span>
-            <button type="button" id="addCart">장바구니에 담기</button>
-          </div>
+          <div class="option-box">
+            <div class="detail-box" id="detail-box">
+              <p>
+                <span id="product-brand"></span> &gt;
+                <span id="product-genderAge"></span> &gt;
+                <span id="product-category"></span> &gt;
+                <span id="product-lineup"></span>
+              </p>
+              <div id="product-title"></div>
+              <div id="product-price"></div>
+              <div id="color-options"></div>
+              <p>색상 : <span id="selectedColor"></span></p>
+              <div id="size-options"></div>
+              <p>사이즈 : <span id="selectedSize"></span></p>
+            </div>
 
-          <div class="wish-box" id="wish-box">
-            <button type="button" id="product-share">공유</button>
-            <button type="button" id="product-wishList"><span id="heart">🤍</span> 위시리스트에 추가</button>
-          </div>
-          
-          <div class="description-box" id="description-box">
-            <h4>제품 상세 설명</h4>
-            <p>제품 번호 : <span id="product-referenceNumber"></span></p>
-            <pre id="product-description"></pre>
+            <div class="cart-box" id="cart-box">
+              <span class="quantity-btn">
+                <button id="decrease-btn">-</button>
+                <p id="quantity">1</p>
+                <button id="increase-btn">+</button>
+              </span>
+              <button type="button" id="addCart">장바구니에 담기</button>
+            </div>
+
+            <div class="wish-box" id="wish-box">
+              <button type="button" id="product-share"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000"><path d="M440-320v-326L336-542l-56-58 200-200 200 200-56 58-104-104v326h-80ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/></svg></button>
+              <button type="button" id="product-wishList"><span id="heart">🤍</span> 위시리스트에 추가</button>
+            </div>
+            
+            <div class="description-box" id="description-box">
+              <p style="font-size: 1rem;">제품 상세 설명</p>
+              <p style="font-size: 0.8rem;">제품 번호 : <span id="product-referenceNumber"></span></p>
+              <pre id="product-description" style="font-size: 0.9rem;"></pre>
+            </div>
           </div>
         </div>
       </div>

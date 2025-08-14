@@ -1,18 +1,14 @@
-.main-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  justify-content: left;
-}
+
 
 .myPage-container {
- display:block;
+ display: block;
 }
 
 .userTab {
-  border-top: 1px solid #333;
-  height: 40px;
+  border-top: 1px solid #cfcfcf;
+  height: 50px;
   padding: 10px 0;
+  align-content: center;
 }
 
 a {

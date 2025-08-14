@@ -9,7 +9,7 @@
   background-color: #fff;
   text-align: left;
   cursor: pointer;
-  padding-bottom: 30px;
+  padding-bottom: 70px;
 }
 
 .product-item:hover {
@@ -22,11 +22,33 @@
 }
 
 .product-item p {
-  margin: 10px 0;
+  font-size: 1rem;
+  margin: 20px 0;
 }
 
-.product-item h3 {
-  margin: 10px 0;
+.search-title {
+  width: 100%;
+  position: fixed;
+  padding-top: 70px;
+  background-color: #fff;
+}
+
+#search-title {
+  height: 60px;
+  padding-left: 20px;
+  align-content: center;
+}
+
+.search-results {
+  max-width: 1200px;
+  width: 100%;
+  padding-top: 150px;
+}
+
+
+.pagination {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 

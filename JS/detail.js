@@ -97,17 +97,17 @@ $(function () {
         $("#selectedSize").text(selectedSize);
       });
 
-
       // 수량 조절
+      let count = 1;
       $("#decrease-btn").click(() => {
-        let quantity = parseInt($("#quantity").val());
-        if (quantity > 1) {
-          $("#quantity").val(quantity - 1);
+        if (count>1){
+          --count;
+          $("#quantity").html(count);
         }
       });
       $("#increase-btn").click(() => {
-        let quantity = parseInt($("#quantity").val());
-        $("#quantity").val(quantity + 1);
+        ++count;
+        $("#quantity").html(count);
       });
 
 
