@@ -50,6 +50,52 @@ $(function () {
   $("#logo").click(function () {
     window.location.href = "index.html";
   });
+
+  const slider = $("#slider");
+  let imageData = [];
+  let totalImages = 0;
+
+  // JSON 불러오기
+  $.ajax({
+    url: "JSON/model.json",
+    dataType: "json",
+    // 데이터 로딩 성공 시 배열 저장, 페이지 표시하기
+    success: function (data) {
+      imageData = data;
+      totalImages = imageData.length;
+
+      // 첫 이미지 표시하기
+      setSliderImage(0);
+
+      // 클릭 시 상품 상세 페이지로 이동하기
+      slider.on("click", function () {
+        const currentIndex = getCurrentIndex();
+        const refNum = imageData[currentIndex].referenceNumber;
+        window.location.href = `Pages/detail.html?referenceNumber=${refNum}`;
+      });   
+
+      // 스크롤 이벤트로 이미지 변경하기
+      $(window).on("scroll", function () {
+        const index = getCurrentIndex();
+        setSliderImage(index);
+      });
+    },
+  });
+
+  // 현재 스크롤 위치로 이미지 index 계산
+  function getCurrentIndex() {
+    const scrollTop = $(window).scrollTop();
+    const sectionHeight = $(window).height();
+    const index = Math.floor(scrollTop / sectionHeight) % totalImages;
+    return index;
+  }
+
+  // 배경 이미지 변경
+  function setSliderImage(index) {
+    slider.css({
+      "background-image": `url(${imageData[index].image})`
+    });
+  }
 });
 
 // 검색 버튼 기능
@@ -96,6 +142,8 @@ function shoppingBtn() {
 // 메뉴 버튼 기능
 function menuBtn() {
   $(".category-container").toggleClass("off on");
+  $(".nav-container").toggleClass("off on");
+  $("svg").toggleClass("off on");
 
   if ($(".category-container").hasClass("on")) {
     // 남성 카테고리 기본 표시 설정

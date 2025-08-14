@@ -78,23 +78,25 @@
 /*     제품 설명    */
 .detail-box p {
   font-size: 0.7rem;
+  margin-bottom: 30px;
+}
+
+
+
+#product-title {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+}
+
+#product-price {
+  font-size: 1.25rem;
+  font-weight: bold;
   margin-bottom: 20px;
 }
 
 .description-box p {
   font-size: 0.7rem;
   margin-bottom: 20px;
-}
-
-#product-title {
-  font-size: 1.25rem;
-  margin-bottom: 15px;
-}
-
-#product-price {
-  font-size: 1.25rem;
-  font-weight: bold;
-  margin-bottom: 15px;
 }
 
 .description-box pre {
