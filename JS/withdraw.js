@@ -1,5 +1,6 @@
 $(function() {
   $("#withdrawBtn").click(withdraw);
+  $("#move-myPage-btn").click(moveMyPage);
 })
 
 
@@ -30,4 +31,8 @@ function withdraw(e) {
     $("#withdrawConfirm-error").addClass("error");
     $("#withdrawConfirm-error").text("내용 확인후 동의해 주세요.");
   }
+}
+
+function moveMyPage() {
+  window.location.href = "myPage.html";
 }

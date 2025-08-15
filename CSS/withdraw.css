@@ -1,7 +1,72 @@
 #withdrawConfirm-error {
   display: none;
   color: red;
+  margin: 10px 0;
+  font-size: 0.75rem;
 }
+
 #withdrawConfirm-error.error {
   display: block;
+}
+
+.withdrawInfo-box,
+.withdrawConfirm-box {
+  border-top: 1px solid #999999;
+  padding: 40px 0;
+}
+
+.info1 {
+ font-size: 1.5rem;
+ margin-bottom: 30px;
+}
+
+.precaution {
+  border: 1px solid #999;
+  padding: 20px;
+  margin: 30px 0;
+}
+
+.info2 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.precaution-detail {
+  font-size: 1rem;
+  gap: 5px;
+  white-space: pre-line;
+}
+
+
+.precaution-link {
+  margin-top: 30px;
+}
+
+#withdrawBtn {
+  height: 50px;
+  width: 300px;
+  padding: 10px 40px;
+  font-size: 1rem;
+  border: 1px solid black;
+  border-radius: 50px;
+  background-color: black;
+  color: white;
+}
+
+#move-myPage-btn {
+  height: 50px;
+  width: 300px;
+  font-size: 1rem;
+  padding: 10px 40px;
+  border: 1px solid #999;
+  border-radius: 50px;
+  background-color: white;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+p, pre {
+  white-space: pre-line;
 }

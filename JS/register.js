@@ -23,7 +23,7 @@ function register(e) {
   const name = $("#name-input").val().trim();
   const email = $("#email-input").val().trim();
   const password = $("#password-input").val().trim();
-  const phone = $("#phone-input").val().trim();
+  let phone = $("#phone-input").val().trim();
   const address = $("#address-input").val().trim();
 
   // 형식 검증 변수 생성하기
@@ -42,9 +42,14 @@ function register(e) {
   }
 
   // 전화번호 검증
-  if (!/^010-\d{4}-\d{4}$/.test(phone)) {
-    $("#phone-error").text("전화번호는 010-XXXX-XXXX 형식이어야 합니다.").addClass("error");
+  if (!(/^010-\d{4}-\d{4}$|^010\d{8}$/).test(phone)) {
+    $("#phone-error").text("전화번호는 010-XXXX-XXXX (하이픈 생략 가능) 형식이어야 합니다.").addClass("error");
     isError = true;
+  }
+  
+  // 전화번호 하이픈 생략된 입력 값 형태 변경하기
+  else if (/^010\d{8}$/.test(phone)) {
+    phone = phone.replace(/(\d{3})(\d{4})(\d{4})/, '010-$2-$3');
   }
 
   // 주소 입력 확인
@@ -55,26 +60,35 @@ function register(e) {
 
   // 비밀번호 검증
   const passwordCheck = checkPasswordInput(password);
-  if (!passwordCheck.english || !passwordCheck.number || !passwordCheck.special || password.length < 8) {
+  if (!passwordCheck.length || !passwordCheck.englishNumber || !passwordCheck.special) {
     $("#password-error").text("비밀번호는 8자 이상이어야 하며, 영문, 숫자, 특수문자(!@#$%^&*)를 포함해야 합니다.").addClass("error");
     isError = true;
   }
 
   // 필수 체크박스 검증
   const requiredCheckboxes = ["#required-checkbox-1", "#required-checkbox-2", "#required-checkbox-3"];
-  let firstUnchecked = null;
+  let unchecked = null;
   requiredCheckboxes.forEach(id => {
     if (!$(id).is(":checked")) {
-      if (!firstUnchecked) firstUnchecked = $(id);
+      if (!unchecked) unchecked = $(id);
       isError = true;
     }
   });
 
   if (isError) {
-    if (firstUnchecked) {
-      $("#checkbox-error").text("필수 항목에 동의해 주세요.").addClass("error");
-      $("html, body").animate({ scrollTop: firstUnchecked.offset().top - 50 }, 500);
-      firstUnchecked.focus();
+    requiredCheckboxes.forEach(id => {
+      const checkbox = $(id);
+      const errorId = `#checkbox-error${id.split('-')[2]}`;
+      if (!checkbox.is(":checked")) {
+        $(errorId).text("필수 항목에 동의해 주세요.").addClass("error");
+      } else {
+        $(errorId).text("").removeClass("error");
+      }
+    });
+    if (unchecked) {
+      $("#checkbox-error").text(""); // 단일 에러 메시지 초기화
+      $("html, body").animate({ scrollTop: unchecked.offset().top - 50 }, 500);
+      unchecked.focus();
     }
     return;
   }
@@ -119,17 +133,20 @@ function checkAll() {
 
 // 비밀번호 실시간 체크
 function checkPasswordInput(password) {
-  const isEnglish = /[a-zA-Z]/.test(password);
-  const isNumber = /\d/.test(password);
+  // 8~20글자
+  const isLength = password.length >= 8 && password.length <= 20;
+  // 영어와 숫자 혼용
+  const isEnglishNumber = /^(?=.*[a-zA-Z])(?=.*\d).+$/.test(password);
+  // 특수문자 포함
   const isSpecial = /[!@#$%^&*]/.test(password);
 
-  $("#pw-english").prop("checked", isEnglish);
-  $("#pw-number").prop("checked", isNumber);
+  $("#pw-length").prop("checked", isLength);
+  $("#pw-englishNumber").prop("checked", isEnglishNumber);
   $("#pw-special").prop("checked", isSpecial);
 
   return {
-    english: isEnglish,
-    number: isNumber,
+    length: isLength,
+    englishNumber: isEnglishNumber,
     special: isSpecial
   };
-};
+}

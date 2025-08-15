@@ -106,8 +106,8 @@ function menuBtn() {
     $(".subcategory-container").removeClass("active");
     $(".genderAge").removeClass("active");
     // 남성 카테고리 기본 표시 설정
-    $("#men-subcategories").addClass("active");
-    $("#men").addClass("active");
+    $("#Men-subcategories").addClass("active");
+    $("#Men").addClass("active");
   } else {
     $(".subcategory-container").removeClass("active");
     $(".genderAge").removeClass("active");

@@ -27,30 +27,36 @@
         <p class="page-name">회원 정보</p>
         <div class="userInfo-container">
           <div class="userId-box">
-            <h3>회원 이메일(아이디) 주소</h3>
-            <p class="userId" id="userInfo-email"></p>
-            <button class="userInfo-change" id="userId-change">이메일(아이디) 주소 변경</button>
-            <button class="userInfo-change" id="userPW-change">비밀번호 변경</button>
+            <p class="info1">회원 이메일(아이디) 주소</p>
+            <p class="info2">이메일(주소) 아이디</p>
+            <div class="email-button-container">
+              <p class="userId" id="userInfo-email"></p>
+              <div class="buttons">
+                <button class="userInfo-change" id="userId-change">이메일(아이디) 주소 변경</button>
+                <button class="userInfo-change" id="userPW-change">비밀번호 변경</button>
+              </div>
+            </div>
           </div>
 
           <div class="userInfo-box">
-            <h3>회원 정보</h3>
-            <h4>이름</h4>
+            <p class="info1">회원 정보</p>
+            <p class="info2">이름</p>
             <p class="userInfo-content" id="userInfo-name"></p>
-            <h4>전화번호</h4>
+            <p class="info2">전화번호</p>
             <p class="userInfo-content" id="userInfo-phone"></p>
-            <h4>주소지</h4>
-            <p class="userInfo-content" id="userInfo-address"></p>
-            <button class="userInfo-change" id="userAddress-change">주소지 변경</button>
-          </div>
+            <p class="info2">주소지</p>
+            <div class="address-button-container">
+              <p class="userInfo-content" id="userInfo-address"></p>
+              <button class="userInfo-change" id="userAddress-change">주소지 변경</button>
+            </div>
+          </div><br><br>
           <button id="move-myPage-btn">MY PAGE 돌아가기</button>
         </div>
-
 
         <div id="modal" class="modal" style="display: none;">
           <div class="modal-content">
             <span class="close">&times;</span>
-            <h3 id="modal-title"></h3>
+            <p id="modal-title"></p>
             <div id="modal-body"></div>
             <button id="modal-save">저장</button>
           </div>

@@ -69,22 +69,22 @@ function openModal(type) {
     case "email":
       modalTitle.text("이메일 변경");
       modalBody.html(`
-      <input type="email" id="modal-email" placeholder="새 이메일">
+      <input type="email" class="changeInfo" id="modal-email" placeholder="새 이메일">
       <button id="modal-check-duplicate">중복 확인</button>
     `);
       break;
     case "password":
       modalTitle.text("비밀번호 변경");
       modalBody.html(`
-      <input type="password" id="modal-current-pw" placeholder="현재 비밀번호">
-      <input type="password" id="modal-new-pw" placeholder="새 비밀번호">
-      <input type="password" id="modal-confirm-pw" placeholder="새 비밀번호 확인">
+      <input type="password" class="changeInfo" id="modal-current-pw" placeholder="현재 비밀번호"><br>
+      <input type="password" class="changeInfo" id="modal-new-pw" placeholder="새 비밀번호"><br>
+      <input type="password" class="changeInfo" id="modal-confirm-pw" placeholder="새 비밀번호 확인">
     `);
       break;
     case "address":
       modalTitle.text("주소지 변경");
       modalBody.html(`
-      <input type="text" id="modal-address" placeholder="주소지">
+      <input type="text" class="changeInfo" id="modal-address" placeholder="주소지">
     `);
       break;
   }

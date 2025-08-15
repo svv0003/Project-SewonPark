@@ -22,83 +22,105 @@
       </div>
 
       <div class="body-container">
-        <h2>회원 가입</h2>
-        <p>등록이 완료되면 입력한 이메일 주소로 등록 확인 이메일이 발송됩니다. 회원 등록 전 이메일 수신 설정을 확인해 주세요.</p>
-        <div class="register-container">
+        <p class="page-name">회원 가입</h2>
+        <div class="register-info"> 
+          <p>등록이 완료되면 입력한 이메일 주소로 등록 확인 이메일이 발송됩니다.</p>
+          <p>회원 등록 전 이메일 수신 설정을 확인해 주세요.</p><br>
+          <a href="https://faq-kr.uniqlo.com/pkb_Home_UQ_KR?id=kA0Ie000000TO0R&l=ko&c=category_uq_kr%3AUQ_C7_4&fs=Search&pn=1" target="_blank">이메일 수신 설정</a>
+        </div>
+        <div class="register-container">  
           <div class="check-box">
-            <p class="content-right">필수 항목 *</p>
+            <p class="content-right">필수 항목 <span class="blue-icon">※</span></p><br><br>
             <p>서비스 이용 약관과 개인정보 수집 및 이용을 확인하시고, 만 14세 이상임에 동의하신 후 미리 보기 화면으로 이동하시기 바랍니다.</p>
             <input type="checkbox" class="check-input" id="required-checkboxAll">모든 항목에 동의합니다.
             <div class="selfCheck-box">
               <label>
-                <input type="checkbox" class="check-input" id="required-checkbox-1">[서비스 이용약관] (필수) *
+                <input type="checkbox" class="check-input" id="required-checkbox-1">[서비스 이용약관] (필수) <span class="blue-icon">※</span><br>
+                <span class="error-message" id="checkbox-error1"></span><br>
                 <a href="https://faq-kr.uniqlo.com/pkb_Home_UQ_KR?id=kA0Ie000000TOMM&l=ko&c=category_uq_kr%3AUQKR_C9_4&fs=Search&pn=1" class="content-right">상세 보기</a>
-              </label>
+              </label><br>
               <label>
-                <input type="checkbox" class="check-input" id="required-checkbox-2">[개인정보 수집 및 이용 동의] (필수) *
+                <input type="checkbox" class="check-input" id="required-checkbox-2">[개인정보 수집 및 이용 동의] (필수) <span class="blue-icon">※</span><br>
+                <span class="error-message" id="checkbox-error2"></span><br>
                 <a href="https://faq-kr.uniqlo.com/pkb_Home_UQ_KR?id=kA0Ie000000TOMW&l=ko&c=category_uq_kr%3AUQKR_C9_4&fs=Search&pn=1" class="content-right">상세 보기</a>
-              </label>
+              </label><br>
               <label>
-                <input type="checkbox" class="check-input">[개인정보 수집 및 이용 동의] (선택)
+                <input type="checkbox" class="check-input">[개인정보 수집 및 이용 동의] (선택)<br><br>
                 <a href="https://faq-kr.uniqlo.com/pkb_Home_UQ_KR?id=kA0Ie000000TOMT&l=ko&c=category_uq_kr%3AUQKR_C9_4&fs=Search&pn=1" class="content-right">상세 보기</a>
-              </label>
+              </label><br>
               <label>
-                <input type="checkbox" class="check-input">[개인정보 제3자 제공 동의] (선택)
+                <input type="checkbox" class="check-input">[개인정보 제3자 제공 동의] (선택)<br><br>
                 <a href="https://faq-kr.uniqlo.com/pkb_Home_UQ_KR?id=kA0Ie000000TOMX" class="content-right">상세 보기</a>
-              </label>
+              </label><br>
               <label>
-                <input type="checkbox" class="check-input">[개인정보 국외이전 동의] (선택)
+                <input type="checkbox" class="check-input">[개인정보 국외이전 동의] (선택)<br><br>
                 <a href="https://faq-kr.uniqlo.com/pkb_Home_UQ_KR?id=kA0Ie000000TOMX&l=ko&c=category_uq_kr%3AUQKR_C9_4&fs=Search&pn=1" class="content-right">상세 보기</a>
-              </label>
+              </label><br>
               <label>
-                <input type="checkbox" class="check-input" id="required-checkbox-3">만 14세 이상입니다. (필수) *
+                <input type="checkbox" class="check-input" id="required-checkbox-3">만 14세 이상입니다. (필수) <span class="blue-icon">※</span><br>
+                <span class="error-message" id="checkbox-error3"></span>
               </label>
             </div>
           </div>
 
 
-          <div class="resgister-input-box">
-            <h3>회원 정보</h3>
-            <div class="resgister-input">
-              <label>이름</label>
-              <input type="text" id="name-input" placeholder="이름을 입력하세요" required>
+          <div class="register-input-box">
+            <p class="info1">회원 정보</p>
+
+            <div class="register-input-content">
+              <label>이름<span class="blue-icon">※</span><br>
+              <input type="text" class="register-input" id="name-input" placeholder="이름을 입력하세요." required><br>
               <span class="error-message" id="name-error"></span>
+              </label>
             </div>
-            <div class="resgister-input">
-              <label>이메일</label>
-              <input type="email" id="email-input" placeholder="example@uniqlo.com" required>
+
+            <div class="register-input-content">
+              <label>이메일<span class="blue-icon">※</span><br>
+              <input type="email" class="register-input" id="email-input" placeholder="example@uniqlo.com" required><br>
               <span class="error-message" id="email-error"></span>
+              </label>
             </div>
-            <div class="resgister-input">
-              <label>비밀번호</label>
-              <input type="password" id="password-input" placeholder="비밀번호를 입력하세요" required>
+
+            <div class="register-input-content">
+              <label>비밀번호<span class="blue-icon">※</span><br>
+              <input type="password" class="register-input" id="password-input" placeholder="비밀번호를 입력하세요." required><br>
               <span class="error-message" id="password-error"></span>
+              </label>
               <div class="password-requirements">
-                <label><input type="checkbox" id="pw-english" disabled> 영문 포함</label>
-                <label><input type="checkbox" id="pw-number" disabled> 숫자 포함</label>
-                <label><input type="checkbox" id="pw-special" disabled> 특수문자(!@#$%^&*) 포함</label>
+                <label><input type="checkbox" id="pw-length" disabled> 8~ 20자</label><br>
+                <label><input type="checkbox" id="pw-englishNumber" disabled> 영문 + 숫자</label><br>
+                <label><input type="checkbox" id="pw-special" disabled> 특수문자 (사용가능 문자 : !"#$%&'()*+,-./:;&lt;=&gt;?@[]^_`{}|~ )</label>
               </div>
             </div>
-            <div class="resgister-input">
-              <label>전화번호</label>
-              <input type="tel" id="phone-input" placeholder="010-1234-5678" required>
+
+            <div class="register-input-content">
+              <label>전화번호<span class="blue-icon">※</span><br>
+              <input type="tel" class="register-input" id="phone-input" placeholder="010-1234-5678 (하이픈 생략 가능)" required><br>
               <span class="error-message" id="phone-error"></span>
+              </label>
             </div>
-          </div>
-          <div class="resgister-input">
-            <label>주소</label>
-            <input type="text" id="address-input" placeholder="주소를 입력하세요" required>
-            <span class="error-message" id="address-error"></span>
-          </div>
-          <div class="resgister-input-box">
+
+
+            <div class="register-input-content">
+              <label>주소<span class="blue-icon">※</span><br>
+              <input type="text" class="register-input" id="address-input" placeholder="주소를 입력하세요" required><br>
+              <span class="error-message" id="address-error"></span>
+             </label>
+            </div>
+
+         </div>
+
+          <div class="register-input-box">
             <p>마케팅 수신 동의 (선택)</p>
             <input type="checkbox" class="check-input">동의합니다.
           </div>
-          <span class="error-message" id="checkbox-error"></span>
+
+
           <button class="register-btn" id="register-btn">회원가입</button>
         </div>
       </div>
     </div>
+    <br><br>
 
     <script src="../JS/scripts2.js"></script>
     <script src="../JS/register.js"></script>
