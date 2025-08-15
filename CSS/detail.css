@@ -175,12 +175,14 @@ border: none;
   align-items: center;
 }
 
+#decrease-btn,
+#increase-btn,
 #quantity {
   text-align: center;
   align-content: center;
   padding: 0 !important;
   border: none;
-  background-color: #efefef;
+  background-color: #999 !important;
 }
 
 #addCart {
