@@ -46,15 +46,15 @@
   cursor: pointer;
 }
 
+.nav-right {
+  display: flex;
+  gap: 15px;
+}
+
 .nav-right img {
   width: 28px;
   height: 28px;
   cursor: pointer;
-}
-
-.nav-right {
-  display: flex;
-  gap: 15px;
 }
 
 .nav-item {
@@ -105,7 +105,9 @@
   font-size: 12px;
 }
 
+
 /* 카테고리 설정 */
+
 .category-container {
   top: 60px;
   left: 0;
@@ -203,3 +205,86 @@ a {
 
 
 
+/* 모바일 반응형 네비게이션 스타일 */
+@media (max-width: 768px) {
+  .nav-container {
+    width: 100%;
+    height: 56px;
+    padding: 18px;
+    width: 100%;
+  }
+
+  .nav-left a {
+    width: 28px;
+    height: 28px;
+  }
+
+  .nav-left img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .nav-right {
+    display: flex;
+    gap: 0;
+  }
+
+  .nav-right img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .nav-item {
+    padding: 0 7px;
+    font-weight: bold;
+  }
+
+  .search-input-container {
+    width: 150px;
+    height: 24px;
+    padding: 10px;
+  }
+
+  .search-input-container.off {
+    display: none;
+  }
+
+  .search-input-container.on {
+    display: flex;
+    width: 150px;
+    height: 24px;
+  }
+
+  .search-input {
+    padding: 3px;
+    font-size: 0.8rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid #333;
+    border-radius: 5px;
+    color: black;
+  }
+
+  .search-input::placeholder {
+    color: #333;
+  }
+
+  .category-container {
+    top: 56px;
+    padding: 10px;
+  }
+
+  .genderAge {
+    font-size: 0.9rem;
+    margin: 8px 5px;
+    padding: 8px 5px;
+  }
+
+  .subcategory-container {
+    margin-top: 5px;
+    height: 130px;
+  }
+
+  .subcategory-item {
+    font-size: 0.85rem;
+  }
+}

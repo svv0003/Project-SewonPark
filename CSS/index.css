@@ -130,7 +130,6 @@
 
 /* 카테고리 설정 */
 
-
 .new-slide.off{
   display: none;
 }
@@ -270,7 +269,6 @@ img {
     width: 100%;
     height: 56px;
     padding: 18px;
-    width: 100%;
     z-index: 1000; 
   }
 
@@ -278,7 +276,6 @@ img {
     width: 100%;
     height: 56px;
     padding: 18px;
-    width: 100%;
     z-index: 1000; 
     background-color: white;
   }
