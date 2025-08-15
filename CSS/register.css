@@ -19,14 +19,23 @@
 .selfCheck-box {
   display: block;
   padding: 10px 0 0 30px;
+  font-size: 0.9rem;
 }
+
+.selfCheck-box label {
+  align-items: center;           /* 세로 중앙 정렬 */
+  flex-wrap: wrap;               /* 모바일에서 텍스트 길면 아래로 자연스럽게 줄바꿈 */
+}
+
 
 .check-input {
   margin: 20px 15px 20px 0;
+  font-size: 0.7rem;
 }
 
 .content-right {
   float: right;
+  font-size: 0.8rem;
 }
 
 .info1 {
@@ -82,24 +91,59 @@
 }
 
 
-.password-requirements input[type="checkbox"]:checked::before,
-.selfCheck-box input[type="checkbox"]:checked::before {
+.password-requirements input[type="checkbox"]:checked::before {
   content: "✓";
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: black;
   font-size: 1rem;
-  font-weight: bolder;
 }
-.password-requirements input[type="checkbox"],
-.selfCheck-box input[type="checkbox"] {
+
+.password-requirements input[type="checkbox"] {
   appearance: none;
-  width: 16px;
-  height: 16px;
-  border: 2px solid #ccc;
-  border-radius: 4px;
+  width: 0.9rem;
+  height: 0.9rem;
+  border: 1px solid black;
+  border-radius: 3px;
   position: relative;
-  vertical-align: middle;
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .selfCheck-box {
+    padding-left: 0;
+  }
+
+  .password-requirements {
+    font-size: 0.8rem;
+  }
+
+  .password-requirements input[type="checkbox"]{
+    appearance: none;
+    width: 0.8rem;
+    height: 0.8rem;
+    border: 1px solid;
+    border-radius: 3px;
+    position: relative;
+  }
+
+  #pw-length,
+  #pw-englishNumber,
+  #pw-special {
+    margin-right: 3px;
+}
+
+  .register-btn-box {
+    text-align: center;
+  }
 }

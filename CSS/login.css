@@ -71,3 +71,33 @@ label {
   margin-top: 10px;
   padding-left: 5px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .login-btn,
+  .move-register-btn {
+    width: 90%;          /* 화면 너비의 90%로 확장 */
+    max-width: 400px;    /* 너무 넓어지지 않게 제한 */
+    margin: 20px auto;   /* 좌우 자동 마진 → 중앙 정렬 */
+    display: block;      /* 블록 요소로 변경 */
+  }
+}
