@@ -1,5 +1,3 @@
-
-
 .myPage-container {
  display: block;
 }
@@ -15,4 +13,15 @@ a {
   color: #333;
   font-size: 0.9rem;
   text-decoration: none;
+}
+
+
+@media (max-width: 768px) {
+  .userTab {
+    height: 40px;
+  }
+
+  a {
+    font-size: 0.8rem;
+  }
 }

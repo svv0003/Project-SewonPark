@@ -4,13 +4,11 @@
  padding: 40px 0;
 }
 
-.info1 {
- font-size: 1.5rem;
+.info0 {
  margin-bottom: 30px;
 }
 
-.info2 {
-  font-size: 1.2rem;
+.info1 {
   margin-bottom: 10px;
 }
 
@@ -41,7 +39,7 @@
 .userInfo-change:hover,
 #move-myPage-btn:hover {
   cursor: pointer;
-  border: 2px solid blue;
+  border: 1px solid blue;
 }
 
 .email-button-container {
@@ -80,7 +78,7 @@
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
-  max-width: 400px;
+  max-width: 450px;
   border-radius: 10px;
 }
 
@@ -102,12 +100,13 @@
 }
 
 #modal-body {
+  align-items: center;
   align-content: center;
 }
 
 .changeInfo {
   height: 30px;
-  width: 200px;
+  width: 170px;
   margin: 5px 0;
   border: 1px solid #999;
   border-radius: 5px;
@@ -133,9 +132,79 @@
 
 #modal-save {
   margin-top: 20px;
-  padding: 10px 20px;
+  padding: 8px 20px;
   border: 1px solid #999;
   border-radius: 50px;
   background-color: white;
   cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .userId-box,
+  .userInfo-box {
+  padding: 30px 0;
+  }
+
+  .userInfo-content {
+    margin-bottom: 30px;
+  }
+
+  .userInfo-change {
+    font-size: 0.8rem;
+    width: 120px;
+  }
+
+  #move-myPage-btn {
+    width: 90%;          /* 화면 너비의 90%로 확장 */
+    max-width: 400px;    /* 너무 넓어지지 않게 제한 */
+    margin: 20px auto;   /* 좌우 자동 마진 → 중앙 정렬 */
+    display: block;      /* 블록 요소로 변경 */
+  }
+
+  .buttons {
+    gap: 3px;
+  }
+
+  .close {
+    font-size: 24px;
+  }
+
+  #modal-title {
+    font-size: 1.2rem;
+  }
+
+
+  .changeInfo {
+    height: 30px;
+    width: 180px;
+    margin: 5px 0;
+    border: 1px solid #999;
+    border-radius: 5px;
+    padding-left: 5px;
+  }
+
+
+  #modal-save {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 1px solid #999;
+    border-radius: 50px;
+    background-color: white;
+    cursor: pointer;
+  }
 }

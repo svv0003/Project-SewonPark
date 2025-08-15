@@ -10,20 +10,17 @@
   padding: 30px 0;
 }
 
-.check-box {
+.check-box label {
   font-size: 1rem;
-}
-
-.blue-icon {
-  color: rgb(50, 55, 200);
-  font-size: 0.8rem;
-  margin-left: 10px;
 }
 
 .selfCheck-box {
   display: block;
   padding: 10px 0 0 30px;
-  font-size: 0.8rem;
+}
+
+.selfCheck-box label {
+  font-size: 0.9rem;
 }
 
 .selfCheck-box label {
@@ -32,36 +29,28 @@
 }
 
 
-
 .check-input {
   margin: 20px 15px 20px 0;
-  font-size: 0.7rem;
 }
 
 #required-checkboxAll {
   margin-top: 40px;
 }
 
-.content-right {
-  float: right;
-  font-size: 0.8rem;
-}
-
-.info1 {
-  font-size: 1.5rem;
+.info0 {
   margin-bottom: 20px;
-}
-.info1 {
-  font-size: 1.2rem;
 }
 
 .info2  {
-  font-size: 0.9rem;
   margin-bottom: 8px;
 }
 
 .register-input-content {
   margin-top: 30px;
+}
+
+.register-input-content label {
+  font-size: 0.9rem;
 }
 
 .register-input {
@@ -76,6 +65,10 @@
 
 .password-requirements {
   padding: 20px 0;
+}
+
+.password-requirements label {
+  font-size: 0.8rem;
 }
 
 #pw-englishNumber,
@@ -93,7 +86,7 @@
   height: 50px;
   width: 300px;
   padding: 10px 40px;
-  margin: 20px 0;
+  margin: 10px 0;
   font-size: 1rem;
   border: 1px solid black;
   border-radius: 50px;
@@ -127,11 +120,30 @@
   position: relative;
 }
 
-a {
+.body-container a {
   color: rgb(50, 55, 200);
   text-decoration: none;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
+
+.blue-icon {
+  color: rgb(50, 55, 200);
+  font-size: 0.9rem;
+  margin-left: 10px;
+}
+
+.content-right {
+  float: right;
+  font-size: 0.9rem;
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -141,30 +153,107 @@ a {
 
 
 @media (max-width: 768px) {
-  .selfCheck-box {
-    padding-left: 0;
+
+  .register-btn-box {
+    text-align: center;
   }
 
-  .password-requirements {
+  .check-box label {
+    font-size: 0.9rem;
+  }
+
+  .selfCheck-box {
+    display: block;
+    padding: 0 0 0 0;
+  }
+
+  .selfCheck-box label {
     font-size: 0.8rem;
   }
 
-  .password-requirements input[type="checkbox"]{
-    appearance: none;
+  .selfCheck-box input[type="checkbox"] {
     width: 0.8rem;
     height: 0.8rem;
-    border: 1px solid;
-    border-radius: 3px;
-    position: relative;
+  }
+
+  .check-input {
+    margin: 10px 10px 10px 0;
+  }
+
+  #required-checkboxAll {
+    margin: 25px 10px 25px 0;
+  }
+
+  .register-input-content {
+    margin-top: 25px;
+  }
+
+  .register-input-content label {
+    font-size: 0.8rem;
+  }
+
+  .register-input {
+    max-width: 400px;
+    width: 90%;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 0.9rem;
+  }
+
+  .password-requirements {
+    padding: 10px 0;
+  }
+
+  .password-requirements label {
+    font-size: 0.7rem;
+  }
+
+  #pw-englishNumber,
+  #pw-special {
+    margin-top: 3px;
   }
 
   #pw-length,
   #pw-englishNumber,
   #pw-special {
     margin-right: 3px;
-}
+  }
 
-  .register-btn-box {
-    text-align: center;
+  .register-btn {
+    width: 90%;          /* 화면 너비의 90%로 확장 */
+    max-width: 400px;    /* 너무 넓어지지 않게 제한 */
+    margin: 20px auto;   /* 좌우 자동 마진 → 중앙 정렬 */
+    display: block;      /* 블록 요소로 변경 */
+  }
+
+  .error-message.error {
+    font-size: 0.7rem;
+  }
+
+  .password-requirements input[type="checkbox"]:checked::before {
+    font-size: 0.85rem;
+  }
+
+  .password-requirements input[type="checkbox"] {
+    width: 0.7rem;
+    height: 0.7rem;
+    border: 1px solid black;
+  }
+
+  .body-container a {
+    font-size: 0.7rem;
+  }
+
+  .blue-icon {
+    font-size: 0.7rem;
+    margin-left: 3px;
+  }
+
+  .content-right {
+    font-size: 0.7rem;
+  }
+
+  .selfCheck-box {
+    padding-left: 0;
   }
 }

@@ -46,7 +46,7 @@ function register(e) {
     $("#phone-error").text("전화번호는 010-XXXX-XXXX (하이픈 생략 가능) 형식이어야 합니다.").addClass("error");
     isError = true;
   }
-  
+
   // 전화번호 하이픈 생략된 입력 값 형태 변경하기
   else if (/^010\d{8}$/.test(phone)) {
     phone = phone.replace(/(\d{3})(\d{4})(\d{4})/, '010-$2-$3');
@@ -61,7 +61,7 @@ function register(e) {
   // 비밀번호 검증
   const passwordCheck = checkPasswordInput(password);
   if (!passwordCheck.length || !passwordCheck.englishNumber || !passwordCheck.special) {
-    $("#password-error").text("비밀번호는 8자 이상이어야 하며, 영문, 숫자, 특수문자(!@#$%^&*)를 포함해야 합니다.").addClass("error");
+    $("#password-error").text("비밀번호는 8자 이상이어야 하며, 영문, 숫자, 특수문자를 포함해야 합니다.").addClass("error");
     isError = true;
   }
 
