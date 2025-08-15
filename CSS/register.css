@@ -80,3 +80,26 @@
   color: red;
   font-size: 0.8rem;
 }
+
+
+.password-requirements input[type="checkbox"]:checked::before,
+.selfCheck-box input[type="checkbox"]:checked::before {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 1rem;
+  font-weight: bolder;
+}
+.password-requirements input[type="checkbox"],
+.selfCheck-box input[type="checkbox"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  position: relative;
+  vertical-align: middle;
+}

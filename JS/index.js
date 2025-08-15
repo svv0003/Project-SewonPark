@@ -54,6 +54,7 @@ $(function () {
   const slider = $("#slider");
   let imageData = [];
   let totalImages = 0;
+  let preloadedImages = {}; // 이미지 캐시를 위한 객체
 
   // JSON 불러오기
   $.ajax({
@@ -64,8 +65,13 @@ $(function () {
       imageData = data;
       totalImages = imageData.length;
 
-      // 첫 이미지 표시하기
+      // 첫 이미지 로드 및 표시
+      preloadImage(0); // 첫 번째 이미지 미리 로드
       setSliderImage(0);
+
+      // 다음 2개의 이미지 미리 로드 (캐싱 효과)
+      preloadImage(1);
+      preloadImage(2);
 
       // 클릭 시 상품 상세 페이지로 이동하기
       slider.on("click", function () {
@@ -78,6 +84,9 @@ $(function () {
       $(window).on("scroll", function () {
         const index = getCurrentIndex();
         setSliderImage(index);
+
+        // 현재 이미지와 다음 이미지 미리 로드하여 끊김 방지
+        preloadImage((index + 1) % totalImages);
       });
     },
   });
@@ -88,6 +97,39 @@ $(function () {
     const sectionHeight = $(window).height();
     const index = Math.floor(scrollTop / sectionHeight) % totalImages;
     return index;
+  }
+
+  // 이미지 캐시 및 설정 함수
+  function setSliderImage(index) {
+    if (preloadedImages[index]) {
+      // 캐시된 이미지가 있으면 바로 사용
+      slider.css({
+        "background-image": `url(${preloadedImages[index].src})`
+      });
+    } else {
+      // 캐시되지 않았다면 이미지 로드 후 설정
+      preloadImage(index, () => {
+        slider.css({
+          "background-image": `url(${preloadedImages[index].src})`
+        });
+      });
+    }
+  }
+
+  // 이미지 미리 로드 함수
+  function preloadImage(index, callback) {
+    if (preloadedImages[index]) {
+      // 이미 로드된 이미지는 다시 로드하지 않음
+      if (callback) callback();
+      return;
+    }
+
+    const img = new Image();
+    img.src = imageData[index].image;
+    img.onload = () => {
+      preloadedImages[index] = img;
+      if (callback) callback();
+    };
   }
 
   // 배경 이미지 변경
@@ -143,6 +185,7 @@ function shoppingBtn() {
 function menuBtn() {
   $(".category-container").toggleClass("off on");
   $(".nav-container").toggleClass("off on");
+  $(".new-slide").toggleClass("off on");
   $("svg").toggleClass("off on");
 
   if ($(".category-container").hasClass("on")) {

@@ -16,22 +16,28 @@
 .nav-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-content: center;
   padding: 10px;
   height: 60px;
-  background-color: #fff;
-  position: fixed; /* 상단 고정 */
-  top: 0; /* 화면 상단에 붙임 */
-  width: 100%; /* 전체 너비 */
-  max-width: 1200px; /* main-container와 동일한 최대 너비 */
-  z-index: 1000; /* 다른 요소 위에 표시 */
-  border-bottom: 1px solid #cfcfcf;
+  position: fixed;
+  top: 0;
+  width: 100%; 
+  max-width: 1200px;
+  z-index: 1000;
+  background-color: white;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center; 
+  height: 100%;
 }
 
 .nav-left a {
   width: 34px;
   height: 34px;
-  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .nav-left img {
@@ -178,3 +184,21 @@ a {
   text-decoration: none;
   font-size: 0.9rem;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
