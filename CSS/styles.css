@@ -178,14 +178,14 @@
   padding: 20px 0;
 }
 
-
-
-
-a {
-  color: rgb(50, 55, 200);
-  text-decoration: none;
-  font-size: 0.9rem;
+p, pre {
+  white-space: pre-line;
 }
+
+button {
+  color: black;
+}
+
 
 
 

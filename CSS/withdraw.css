@@ -67,6 +67,9 @@ button:hover {
   cursor: pointer;
 }
 
-p, pre {
-  white-space: pre-line;
+
+a {
+  color: rgb(50, 55, 200);
+  text-decoration: none;
+  font-size: 0.9rem;
 }

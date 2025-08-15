@@ -10,6 +10,10 @@
   padding: 30px 0;
 }
 
+.check-box {
+  font-size: 1rem;
+}
+
 .blue-icon {
   color: rgb(50, 55, 200);
   font-size: 0.8rem;
@@ -19,7 +23,7 @@
 .selfCheck-box {
   display: block;
   padding: 10px 0 0 30px;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .selfCheck-box label {
@@ -28,9 +32,14 @@
 }
 
 
+
 .check-input {
   margin: 20px 15px 20px 0;
   font-size: 0.7rem;
+}
+
+#required-checkboxAll {
+  margin-top: 40px;
 }
 
 .content-right {
@@ -41,6 +50,14 @@
 .info1 {
   font-size: 1.5rem;
   margin-bottom: 20px;
+}
+.info1 {
+  font-size: 1.2rem;
+}
+
+.info2  {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
 }
 
 .register-input-content {
@@ -110,7 +127,11 @@
   position: relative;
 }
 
-
+a {
+  color: rgb(50, 55, 200);
+  text-decoration: none;
+  font-size: 0.8rem;
+}
 
 
 
