@@ -71,41 +71,42 @@
           <div class="image-box">
             <div id="product-image"></div>
           </div>
+          <div class="exceptIMG">
+            <div class="option-box">
+              <div class="detail-box" id="detail-box">
+                <div id="product-genderAge-category">
+                  <span id="product-brand"></span> &gt;
+                  <span id="product-genderAge"></span> &gt;
+                  <span id="product-category"></span> &gt;
+                  <span id="product-lineup"></span>
+                </div>
+                <div id="product-title"></div>
+                <div id="product-price"></div>
+                <div id="color-options"></div>
+                <p class="info3">색상 : <span id="selectedColor"></span></p>
+                <div id="size-options"></div>
+                <p class="info3">사이즈 : <span id="selectedSize"></span></p>
+              </div>
+              
+              <div class="cart-box" id="cart-box">
+                <span class="quantity-btn">
+                  <button id="decrease-btn">-</button>
+                  <p id="quantity">1</p>
+                  <button id="increase-btn">+</button>
+                </span>
+                <button type="button" id="addCart">장바구니에 담기</button>
+              </div>
 
-          <div class="option-box">
-            <div class="detail-box" id="detail-box">
-              <p>
-                <span id="product-brand"></span> &gt;
-                <span id="product-genderAge"></span> &gt;
-                <span id="product-category"></span> &gt;
-                <span id="product-lineup"></span>
-              </p>
-              <div id="product-title"></div>
-              <div id="product-price"></div>
-              <div id="color-options"></div>
-              <p>색상 : <span id="selectedColor"></span></p>
-              <div id="size-options"></div>
-              <p>사이즈 : <span id="selectedSize"></span></p>
-            </div>
-
-            <div class="cart-box" id="cart-box">
-              <span class="quantity-btn">
-                <button id="decrease-btn">-</button>
-                <p id="quantity">1</p>
-                <button id="increase-btn">+</button>
-              </span>
-              <button type="button" id="addCart">장바구니에 담기</button>
-            </div>
-
-            <div class="wish-box" id="wish-box">
-              <button type="button" id="product-share"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000"><path d="M440-320v-326L336-542l-56-58 200-200 200 200-56 58-104-104v326h-80ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/></svg></button>
-              <button type="button" id="product-wishList"><span id="heart">🤍</span> 위시리스트에 추가</button>
-            </div>
-            
-            <div class="description-box" id="description-box">
-              <p style="font-size: 1rem;">제품 상세 설명</p>
-              <p style="font-size: 0.8rem;">제품 번호 : <span id="product-referenceNumber"></span></p>
-              <pre id="product-description" style="font-size: 0.9rem;"></pre>
+              <div class="wish-box" id="wish-box">
+                <button type="button" id="product-share"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000"><path d="M440-320v-326L336-542l-56-58 200-200 200 200-56 58-104-104v326h-80ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/></svg></button>
+                <button type="button" id="product-wishList"><span id="heart">🤍</span> 위시리스트에 추가</button>
+              </div>
+              
+              <div class="description-box" id="description-box">
+                <p class="info1">제품 상세 설명</p>
+                <p class="info2">제품 번호 : <span id="product-referenceNumber"></span></p>
+                <pre id="product-description"  class="info3"></pre>
+              </div>
             </div>
           </div>
         </div>
