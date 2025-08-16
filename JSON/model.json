@@ -1,86 +1,92 @@
 [
   {
     "id": 1,
-    "referenceNumber": "474244",
-    "image": "IMG/AIRismMen.png",
+    "referenceNumber": "479322",
+    "image": "IMG/wideStraightJeans.jpg",
     "alt": "productIMG1"
   },
   {
     "id": 2,
     "referenceNumber": "475564",
-    "image": "IMG/WideChinoPants.png",
+    "image": "IMG/wideChinoPants.jpg",
     "alt": "productIMG2"
   },
   {
     "id": 3,
-    "referenceNumber": "478230",
-    "image": "IMG/ZipUpBlouson.png",
+    "referenceNumber": "474504",
+    "image": "IMG/shirtsMen.jpg",
     "alt": "productIMG3"
   },
     {
     "id": 4,
     "referenceNumber": "479577",
-    "image": "IMG/MulitPocketShoulderBag.png",
+    "image": "IMG/shoulderBagMen.jpg",
     "alt": "productIMG4"
   },
   {
     "id": 5,
     "referenceNumber": "474002",
-    "image": "IMG/AIRismWomen.png",
+    "image": "IMG/AIRismWomen.jpg",
     "alt": "productIMG5"
   },
   {
     "id": 6,
     "referenceNumber": "475564",
-    "image": "IMG/StraightJeans.png",
+    "image": "IMG/StraightJeans.jpg",
     "alt": "productIMG6"
   },
   {
     "id": 7,
-    "referenceNumber": "476946",
-    "image": "IMG/DenimPants.png",
+    "referenceNumber": "483722",
+    "image": "IMG/BarrelLegPants.jpg",
     "alt": "productIMG7"
   },
   {
     "id": 8,
-    "referenceNumber": "480807",
-    "image": "IMG/RoundUltraMiniShoulderBag.png",
+    "referenceNumber": "479208",
+    "image": "IMG/outerWomen.jpg",
     "alt": "productIMG8"
   },
   {
     "id": 9,
     "referenceNumber": "474592",
-    "image": "IMG/AIRismKids.png",
+    "image": "IMG/AIRismKids.jpg",
     "alt": "productIMG9"
   },
   {
     "id": 10,
     "referenceNumber": "474635",
-    "image": "IMG/AIRismCottonCrewneck.png",
+    "image": "IMG/AIRismCottonCrewneck.jpg",
     "alt": "productIMG10"
   },
   {
     "id": 11,
-    "referenceNumber": "474703",
-    "image": "IMG/DenimShortPants.png",
+    "referenceNumber": "480328",
+    "image": "IMG/poloShirtsKids.jpg",
     "alt": "productIMG11"
   },
   {
     "id": 12,
-    "referenceNumber": "477958",
-    "image": "IMG/CottonBodySuit.png",
+    "referenceNumber": "474703",
+    "image": "IMG/denimShortPants.jpg",
     "alt": "productIMG12"
   },
   {
     "id": 13,
-    "referenceNumber": "478345",
-    "image": "IMG/CoverAll.png",
+    "referenceNumber": "478466",
+    "image": "IMG/pictureBookPajama.jpg",
     "alt": "productIMG13"
   },
   {
     "id": 14,
-    "referenceNumber": "478358",
-    "image": "IMG/Masterpiece.png",
+    "referenceNumber": "478345",
+    "image": "IMG/CoverAll.jpg",
     "alt": "productIMG14"
+  },
+  {
+    "id": 15,
+    "referenceNumber": "478358",
+    "image": "IMG/masterpiece.jpg",
+    "alt": "productIMG15"
   }
 ]
