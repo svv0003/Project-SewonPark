@@ -68,9 +68,9 @@ $(function () {
             `
             <div class="product-item" onclick="goToDetail('${product.referenceNumber}')" >
               <img src="${product.image[initialColor]}" alt="${product.title} - ${initialColor}">
-              <p style="font-size:0.6rem; font-weight:bold;">${product.brand}</p>
-              <p>${product.title}</p>
-              <p style="font-size:1.2rem; font-weight:bolder;">${product.price.toLocaleString()}원</p>
+              <p class="info4">${product.brand}</p>
+              <p class="info2">${product.title}</p>
+              <p class="info1">${product.price.toLocaleString()}원</p>
             </div>
             `
           );
