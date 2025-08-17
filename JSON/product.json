@@ -644,5 +644,23 @@
     "description": "스티치 워크를 더해 캐주얼한 인상을 줍니다. 뒷부분은 플랩이 달린 패치 포켓이 포함되어 있습니다.",
     "size": ["XS", "S", "M", "L", "XL"],
     "color": ["09 BLACK", "32 BEIGE", "69 NAVY"]
+  },
+  {
+    "id": 36,
+    "referenceNumber": "474656",
+    "title": "KIDS AIRism메쉬탱크탑",
+    "brand": "UNIQLO",
+    "genderAge": "Kids",
+    "category": "Top",
+    "lineup": "AIRism",
+    "price": 9900,
+    "image": {
+      "00 WHITE": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/464197/item/goods_00_464197_3x4.jpg?width=600",
+      "09 BLACK": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/464197/item/goods_09_464197_3x4.jpg?width=600",
+      "60 LIGHT BLUE": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/464197/item/goods_60_464197_3x4.jpg?width=600"
+    },
+    "description": "보송보송한 착용감을 느낄 수 있어 입고 벗기 편합니다.",
+    "size": ["100", "110", "120", "130", "140", "150", "160"],
+    "color": ["00 WHITE", "09 BLACK", "60 LIGHT BLUE"]
   }
 ]

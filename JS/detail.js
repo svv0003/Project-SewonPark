@@ -55,6 +55,7 @@ $(function () {
         "56 OLIVE": "#a2a202ff",
         "57 OLIVE": "#808002ff",
         "58 DARK GREEN": "#025602ff",
+        "60 LIGHT BLUE": "#acc0f2ff",
         "61 BLUE": "#89a1ddff",
         "62 BLUE": "#6988d6ff",
         "63 BLUE": "#597cd5ff",
