@@ -5,7 +5,7 @@ $(function () {
   // JSON 데이터 가져오기
   let products = [];
   $.ajax({
-    url: "../JSON/product.json",
+    url: "../json/product.json",
     dataType: "json",
     // 데이터 로딩 성공 시 배열 저장, 페이지 렌더링
     success: function (data) {

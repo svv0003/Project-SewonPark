@@ -21,7 +21,7 @@ $(function () {
       $(this)
         .attr("placeholder", "검색어를 입력하세요")
         .removeClass("error-placeholder");
-      window.location.href = `Pages/search.html?query=${keyword}&page=1`;
+      window.location.href = `pages/search.html?query=${keyword}&page=1`;
     }
   });
 
@@ -43,7 +43,7 @@ $(function () {
     e.preventDefault();
     const gender = $(this).data("gender");
     const category = $(this).data("category");
-    window.location.href = `Pages/search.html?genderAge=${gender}&category=${category}&page=1`;
+    window.location.href = `pages/search.html?genderAge=${gender}&category=${category}&page=1`;
   });
 
   // 로고 클릭 시 홈으로 이동
@@ -58,7 +58,7 @@ $(function () {
 
   // JSON 불러오기
   $.ajax({
-    url: "JSON/model.json",
+    url: "json/model.json",
     dataType: "json",
     // 데이터 로딩 성공 시 배열 저장, 페이지 표시하기
     success: function (data) {
@@ -77,7 +77,7 @@ $(function () {
       slider.on("click", function () {
         const currentIndex = getCurrentIndex();
         const refNum = imageData[currentIndex].referenceNumber;
-        window.location.href = `Pages/detail.html?referenceNumber=${refNum}`;
+        window.location.href = `pages/detail.html?referenceNumber=${refNum}`;
       });   
 
       // 스크롤 이벤트로 이미지 변경하기
@@ -168,11 +168,11 @@ function userPageBtn() {
   if (!loggedInUser) {
     // 로그인 팝업창 생성하기
     // window.open("login.html", "_blank", options);
-    window.location.href = "Pages/login.html";
+    window.location.href = "pages/login.html";
   }
   // 로그인 정보가 있으면 마이페이지 이동
   else {
-    window.location.href = "Pages/myPage.html";
+    window.location.href = "pages/myPage.html";
   }
 }
 

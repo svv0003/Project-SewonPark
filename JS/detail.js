@@ -2,7 +2,7 @@ $(function () {
   // JSON 데이터 가져오기
   let products = [];
   $.ajax({
-    url: "../JSON/product.json",
+    url: "../json/product.json",
     dataType: "json",
     success: function (data) {
       products = data;
