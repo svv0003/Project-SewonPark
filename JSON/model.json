@@ -1,90 +1,66 @@
 [
   {
     "id": 1,
-    "referenceNumber": "479322",
-    "image": "IMG/wideStraightJeans.jpg",
-    "alt": "productIMG1"
-  },
-  {
-    "id": 2,
     "referenceNumber": "475564",
     "image": "IMG/wideChinoPants.jpg",
     "alt": "productIMG2"
   },
   {
-    "id": 3,
-    "referenceNumber": "474504",
-    "image": "IMG/shirtsMen.jpg",
-    "alt": "productIMG3"
-  },
-    {
-    "id": 4,
-    "referenceNumber": "479577",
-    "image": "IMG/shoulderBagMen.jpg",
-    "alt": "productIMG4"
-  },
-  {
-    "id": 5,
+    "id": 2,
     "referenceNumber": "474002",
     "image": "IMG/AIRismWomen.jpg",
     "alt": "productIMG5"
   },
   {
-    "id": 6,
+    "id": 3,
     "referenceNumber": "475564",
     "image": "IMG/StraightJeans.jpg",
     "alt": "productIMG6"
   },
   {
-    "id": 7,
+    "id": 4,
     "referenceNumber": "483722",
     "image": "IMG/BarrelLegPants.jpg",
     "alt": "productIMG7"
   },
   {
-    "id": 8,
+    "id": 5,
     "referenceNumber": "479208",
     "image": "IMG/outerWomen.jpg",
     "alt": "productIMG8"
   },
   {
-    "id": 9,
+    "id": 6,
     "referenceNumber": "474656",
     "image": "IMG/AIRismKids.jpg",
     "alt": "productIMG9"
   },
   {
-    "id": 10,
+    "id": 7,
     "referenceNumber": "474635",
     "image": "IMG/AIRismCottonCrewneck.jpg",
     "alt": "productIMG10"
   },
   {
-    "id": 11,
+    "id": 8,
     "referenceNumber": "480328",
     "image": "IMG/poloShirtsKids.jpg",
     "alt": "productIMG11"
   },
   {
-    "id": 12,
-    "referenceNumber": "474703",
-    "image": "IMG/denimShortPants.jpg",
-    "alt": "productIMG12"
-  },
-  {
-    "id": 13,
+    "id": 9,
     "referenceNumber": "478466",
     "image": "IMG/pictureBookPajama.jpg",
     "alt": "productIMG13"
   },
   {
-    "id": 14,
+    "id": 10,
     "referenceNumber": "478345",
     "image": "IMG/CoverAll.jpg",
     "alt": "productIMG14"
   },
   {
-    "id": 15,
+    "id": 11,
     "referenceNumber": "478358",
     "image": "IMG/masterpiece.jpg",
     "alt": "productIMG15"
