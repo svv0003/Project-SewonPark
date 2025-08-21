@@ -7,7 +7,7 @@ SPA(Single Page Application)의 원리를 이해하고 jQuery를 활용하여 �
 
 <div align="center">
 
-### **[배포된 웹사이트 보기](https://www.google.com/search?q=https://project-sewon-park.vercel.app/)**
+### **[배포된 웹사이트 보기](https://project-sewon-park.vercel.app/index.html)**
 
 [![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://project-sewon-park.vercel.app/)
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white)](https://project-sewon-park.vercel.app/)
@@ -65,7 +65,7 @@ uniqlo-clone/
 │
 ├── 🖼️ img/                     # 이미지 리소스
 │   ├── UNIQLO_logo.jpeg        # 브랜드 로고
-│   └── [20+ 상품/모델 이미지]     # 메인 페이지 슬라이더용 이미지
+│   └── [20+ 상품/모델 이미지]      # 메인 페이지 슬라이더용 이미지
 │
 ├── ⚙️ JS/                      # JavaScript 파일
 │   ├── index.js                # 메인 페이지 (슬라이더, 메뉴)
