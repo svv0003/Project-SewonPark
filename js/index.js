@@ -78,7 +78,7 @@ $(function () {
         const currentIndex = getCurrentIndex();
         const refNum = imageData[currentIndex].referenceNumber;
         window.location.href = `pages/detail.html?referenceNumber=${refNum}`;
-      });   
+      });
 
       // 스크롤 이벤트로 이미지 변경하기
       $(window).on("scroll", function () {

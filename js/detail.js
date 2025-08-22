@@ -42,7 +42,7 @@ $(function () {
         "10 PINK": "#ffc8f2ff",
         "11 PINK": "#fab0e9ff",
         "12 PINK": "#ffa2e9ff",
-        "19 WINE": "#913842ff",
+        "19 WINE": "#8d2733ff",
         "30 NATURAL": "#ffffd8ff",
         "31 BEIGE": "#e5e5adff",
         "32 BEIGE": "#d3d38fff",

@@ -24,7 +24,9 @@ $(function () {
     const page = parseInt(urlParams.get("page") || "1", 10);
   
     // 제품 카테고리명 표시하기
-    $("#search-title").html(`${genderAge} &gt; ${category}`);
+    if (genderAge || category) {
+      $("#search-title").html(`${genderAge} &gt; ${category}`);
+    }
 
     // 화면에 보여질 제품 변수
     let filteredProducts = products;
